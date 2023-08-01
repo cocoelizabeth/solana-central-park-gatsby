@@ -67,7 +67,7 @@ section {
 :root {
   --grid-width: 100vw;
   --grid-height: 100vh;
-  --grid-padding: 5.4vw;
+  --grid-padding: 6vw;
   --grid-column-count: 6;
   --grid-gutter:  1.6rem;
 }

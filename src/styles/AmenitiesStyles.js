@@ -1,16 +1,17 @@
 import styled from 'styled-components';
 export default styled.div`
     border-top: 1px solid var(--central-black);
-    padding-top: var(--section-padding-small);
+    /* padding-top: var(--section-padding-small); */
 
     .h2 {
         padding-bottom: 2rem;
+        padding-top: 4rem;
     }
     .amenities-list-container {
         display: flex;
         /* justify-content: space-between; */
         flex-wrap: wrap;
-        padding-left: var(--grid-gutter);
+        /* padding-left: var(--grid-gutter); */
     } 
     .amenity-list-item {
         width: 33%;
@@ -40,7 +41,7 @@ export default styled.div`
             margin: 0 auto;
             padding-left: 10px;
             padding-right: 10px;
-            text-align: left;
+            text-align: center;
         }
 
 
@@ -48,7 +49,7 @@ export default styled.div`
 
     .icon-container {
         display: flex;
-        /* justify-content: center; */
+        justify-content: center;
         align-items: center;
         width:100%;
     }
