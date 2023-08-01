@@ -7,12 +7,31 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
+  siteMetadata: {
+    title: `Solana Central Park`,
+    description: 'Luxury Apartments for Rent in Denver, Colorado. Coming 2024',
+    // image: '/recess-chrome-v2-optimized.gif',
+    // siteUrl: `https://www.recess.studio`
+  },
   plugins: [
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sass`, // Needed for dynamic images
+    `gatsby-plugin-sass`,
+    `gatsby-transformer-inline-svg`,
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    }, // Needed for dynamic images
     {
       resolve: `gatsby-omni-font-loader`,
       options: {

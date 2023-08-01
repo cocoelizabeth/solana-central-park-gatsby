@@ -1,74 +1,195 @@
 import * as React from "react"
-import { Link } from 'gatsby'
-import '../css/reset.css'
-import '../css/styles.css'
+import { graphql, useStaticQuery, Link } from "gatsby"
+import {renderRichText} from 'gatsby-source-contentful/rich-text'
+import { INLINES, BLOCKS, MARKS } from '@contentful/rich-text-types'
+import { GatsbyImage, getImage, getSrc, getSrcSet} from 'gatsby-plugin-image'
+import HomepageStyles from "../styles/HomepageStyles"
+import Amenities from "../components/Amenities"
+import Image from "../components/Image"
+
 export default function Home() {
+  const options = {
+    renderMark: {
+        [MARKS.BOLD]: (text) => <b>{text}</b>,
+        [MARKS.ITALIC]: (text, key) => <em key={key}>{text}</em>,
+        [MARKS.UNDERLINE]: (text, key) => <u key={key}>{text}</u>,
+        [MARKS.CODE]: (text, key) => <code>{text}</code>
+    },
+    renderNode: {
+        [INLINES.HYPERLINK]: (node, children) => {
+            const { uri } = node.data
+            return (
+                <a href={uri} className="underline">
+                    {children}
+                </a>
+            )
+        },
+        [BLOCKS.PARAGRAPH]: (node, children) => <p>{children}</p>,
+        [BLOCKS.HEADING_1]: (node, key, next) => <h1>{next(node.content, key, next)}</h1>,
+        [BLOCKS.HEADING_2]: (node, key, next) => <h2>{next(node.content, key, next)}</h2>,
+        [BLOCKS.HEADING_3]: (node, key, next) => <h3>{next(node.content, key, next)}</h3>,
+        [BLOCKS.HEADING_4]: (node, key, next) => <h4>{next(node.content, key, next)}</h4>,
+        [BLOCKS.HEADING_5]: (node, key, next) => <h5>{next(node.content, key, next)}</h5>,
+        [BLOCKS.HEADING_6]: (node, key, next) => <h6>{next(node.content, key, next)}</h6>,
+        [BLOCKS.UL_LIST]: (node, children) => (<ul>{children}</ul>),
+        [BLOCKS.OL_LIST]: (node, children) => (<ol>{children}</ol>),
+        [BLOCKS.LIST_ITEM]: (node, children) => <li className="careers-bullets">{children}</li>,
+    }
+  }
+
+  const data = useStaticQuery (
+    graphql`
+        query  {
+          allContentfulPageLandingPage {
+            edges {
+              node {
+                seoDescription {
+                  seoDescription
+                }
+                heroGallery {
+                  gatsbyImageData
+                  file {
+                    contentType
+                    url
+                  }
+                }
+                introTextBody {
+                  raw
+                }
+                pageTitle
+                slug
+              }
+            }
+          }
+          allContentfulPageAmenities {
+            edges {
+              node {
+                apartmentAmenities {
+                  title
+                  image {
+                    gatsbyImageData
+                    url
+                    svg {
+                      absolutePath
+                      content
+                      dataURI
+                      originalContent
+                      relativePath
+                    }
+                    file {
+                      url
+                      contentType
+                    }
+                  }
+                }
+                communityAmenities {
+                  title
+                  image {
+                    gatsbyImageData
+                    url
+                    svg {
+                      absolutePath
+                      content
+                      dataURI
+                      originalContent
+                      relativePath
+                    }
+                    file {
+                      url
+                      contentType
+                      
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        
+    `
+);
+
+//   const data = useStaticQuery (
+//     graphql`
+//         query  {
+//           allContentfulPageLandingPage {
+//             edges {
+//               node {
+//                 seoDescription {
+//                   seoDescription
+//                 }
+//                 heroGallery {
+//                   gatsbyImageData
+//                 }
+//                 introTextBody {
+//                   raw
+//                 }
+//                 pageTitle
+//                 slug
+//               }
+//             }
+//           }
+//           allContentfulIcons {
+//             edges {
+//               node {
+//                 title
+//                 image {
+//                   gatsbyImageData
+//                   url
+//                   svg {
+//                     absolutePath
+//                     content
+//                     dataURI
+//                     originalContent
+//                     relativePath
+//                   }
+//                   file {
+//                     url
+//                     contentType
+//                   }
+//                 }
+//               }
+//             }
+//           }
+//         }
+        
+//     `
+// );
+
+
+
+const homepageData = data.allContentfulPageLandingPage.edges[0].node;
+const seoDescription = homepageData.seoDescription.seoDescription;
+const heroGalleryArray = homepageData.heroGallery;
+const mainHeroImageSrcSet = homepageData.heroGallery[0].gatsbyImageData.images.sources[0].srcSet;
+const mainHeroImageSrc = homepageData.heroGallery[0].gatsbyImageData.images.fallback.src;
+const introTextBody = homepageData.introTextBody;
+const pageTitle = homepageData.pageTitle;
+const slug = homepageData.slug;
+// const amenitiesData = data.allContentfulIcons.edges
+const apartmentAmenitiesData = data.allContentfulPageAmenities.edges[0].node.apartmentAmenities;
+const communityAmenitiesData = data.allContentfulPageAmenities.edges[0].node.communityAmenities;
+const gatsbyImageData = homepageData.heroGallery[0].gatsbyImageData
+const file = homepageData.heroGallery[0].file
+
+
+
   return (
-    <div className="background-image-container">
-      <div class='button'>
-        <button>Click Me</button>
-        <svg viewBox="0 0 500 150" preserveAspectRatio="none">
-          <path fill="none" d="M325,18C228.7-8.3,118.5,8.3,78,21C22.4,38.4,4.6,54.6,5.6,77.6c1.4,32.4,52.2,54,142.6,63.7 c66.2,7.1,212.2,7.5,273.5-8.3c64.4-16.6,104.3-57.6,33.8-98.2C386.7-4.9,179.4-1.4,126.3,20.7" />
-        </svg>
+    <HomepageStyles>
+
+      <div className="hero-image-container">
+        {/* <Image gatsbyImageData={gatsbyImageData} file={file} ></Image> */}
+        <img src={mainHeroImageSrc} srcSet={mainHeroImageSrcSet} className="hero-image"></img>
       </div>
-    </div>
+      <section>
+        <div className="body-copy-container">
+        {renderRichText(introTextBody, options)}
+        </div>
+
+      </section>
+      <Amenities apartmentAmenities={apartmentAmenitiesData} communityAmenities={communityAmenitiesData} />
+     
+    </HomepageStyles>
   )
 }
 
-// import * as React from 'react'
-
-
-// import logoGif from '../images/recess-chrome-v2-optimized.gif'
-// import backgroundImage from '../images/background.jpg'
-// import '../css/font.css'
-
-// import '../css/work-menu.css'
-// import { SEO } from '../components/seo'
-
-// import logo from '../images/solana-central-park-logo.svg'
-
-// const Home = () => {
-//   return (
-
-//     <div className="background-image-container">
-//       {/* <img className="background-image" src={backgroundImage} alt="Background Image" /> */}
-//       <div className="grid">
-//         <div className="grid-item grid-item--width4 grid-item--1" />
-//         <div className="grid-item grid-item--2 grid-item--width6">
-//           <Link to="/" >
-//             {/* <img className="logo" src={logo} alt="Logo" /> */}
-//           </Link>
-//         </div>
-      
-//         <div className="grid-item grid-item--3 grid-item--width6 " />
-//         <div className="grid-item grid-item--4 grid-item--width24">Recess Studios is a full service marketing agency &amp; production studio based in New York, Los Angeles, &amp; Portland.</div>
-//         <div className="grid-item grid-item--5 grid-item--width4 " />
-//         <div className="grid-item grid-item--6 grid-item--width5">
-//           {/* <Link to="/work" className="underline-link" title="Work">OUR WORK</Link> */}
-//         </div>
-//         <div className="grid-item grid-item--7 grid-item--width20 " />
-//         <div className="grid-item grid-item--8 grid-item--width11">
-//           FOR BUSINESS INQUIRIES
-//           <br></br>
-//           <a className="underline-link" href="mailto:321@recessworld.com" title="mailto:321@recessworld.com" target="_blank" rel="noreferrer noopener">321@RECESSWORLD.COM</a>
-//           <br></br>
-//           <br></br>
-//           <Link to="/careers" className="underline-link">CAREER OPPORTUNITIES</Link>
-//         </div>
-//         <div className="grid-item grid-item-9 grid-item--width4 " />
-//         <div className="grid-item grid-item--10 grid-item--width6">
-//           <a className="underline-link" href="https://www.instagram.com/recess.studios/" target="_blank">@RECESS.STUDIOS</a>
-//           <br></br>
-//           <a className="underline-link" href="https://www.recess.shop" target="_blank">SHOP</a>
-//         </div>
-//         <div className="grid-item grid-item--11 grid-item--width10 " />
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default Home;
-
-// export const Head = () => (
-//   <SEO />
-// )

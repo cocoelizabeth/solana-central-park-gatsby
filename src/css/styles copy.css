@@ -6,6 +6,12 @@
 :root {
     --font-family-body: "Fira Mono";
     --font-family-heading: "Marcellus";
+    --font-size-xl:  80px;
+    --font-size-large: 50px;
+    --font-size-body-copy: 26px;
+  
+    --font-size-small: 14px;
+    --font-size-xs: 10px;
 
     --central-white: #F7F6F6;
     --central-light: ##f8efea;
@@ -24,25 +30,10 @@
 
     --icon-color: var(--central-black);
 }
-
-:root {
-  --font-size-xl:  80px;
-  --font-size-large: 50px;
-  --font-size-body-copy: 15px;
-
-  --font-size-small: 14px;
-  --font-size-xs: 10px;
-  
-  --logo-height: 34px;
-  --nav-margin-top: 1.5rem;
-  --nav-margin-bottom: 1.5rem;
-  --header-height: calc(var(--logo-height) + var(--nav-margin-top) + var(--nav-margin-bottom));
-
-  --section-padding-small: 3rem;
-}
 .h1, .h2,.h3, .h4, .h5 {
   font-family: var(--font-family-heading);
 }
+
 
 
 .h1 {
@@ -77,4 +68,63 @@ section {
        
   }
 }
+.button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
 
+
+}
+  
+  .button button {
+    padding: 8px 16px;
+    border: none;
+    background: none;
+    outline: none;
+    text-transform: uppercase;
+    font-size: var(--font-size-xs);
+    letter-spacing: 1.5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .button svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  
+  .button path {
+    stroke: var(--central-olive);
+    stroke-width: 8px;
+    stroke-dasharray: 0 1500;
+    /* animation: drawReverse 1s backwards; */
+  }
+  
+  .button:hover path {
+    animation: draw 1s forwards;
+  }
+  
+  @keyframes draw {
+    from {
+      stroke-dasharray: 0 1500;
+    }
+  
+    to {
+      stroke-dasharray: 1500 1500;
+    }
+  }
+
+  
+  @keyframes drawReverse {
+    from {
+      stroke-dasharray: 1500 1500;
+    }
+  
+    to {
+      stroke-dasharray: 0 1500;
+    }
+  }
