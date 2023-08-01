@@ -9,6 +9,7 @@ export default styled.header`
     position: fixed;
     top: 0;
     width: 100vw;
+    border-top: 1px solid var(--central-black);
     border-bottom: 1px solid var(--central-black);
     section {
         width: 100%;
