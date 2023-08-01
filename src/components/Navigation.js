@@ -2,6 +2,7 @@ import { graphql, useStaticQuery, Link } from "gatsby"
 
 import React, { useState } from 'react';
 import HeaderStyles from '../styles/HeaderStyles';
+import NavigationStyles from "../styles/NavigationStyles";
 // import { MdClose } from 'react-icons/md';
 // import clsx from 'clsx';
 // import HeaderStyles from '../styles/HeaderStyles';
@@ -52,7 +53,7 @@ const Header = () => {
   };
 
   return (
-    <HeaderStyles>
+    <NavigationStyles>
                 {/* <div className="test"></div> */}
         <section>
         <Link to="/" className="logo-container"><img className="logo" src={logoUrl}></img></Link>
@@ -65,7 +66,7 @@ const Header = () => {
         </div>
         </section>
 
-    </HeaderStyles>  
+    </NavigationStyles>  
     )
 }; 
 

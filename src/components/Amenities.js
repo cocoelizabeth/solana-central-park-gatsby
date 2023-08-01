@@ -31,7 +31,6 @@ const Amenities = ({apartmentAmenities, communityAmenities}) => {
     //             }
     //     `
     // );
-    debugger
     // const amenitiesData = data.allContentfulNavigationHeader.edges[0].node;
     const communityAmenitiesList = communityAmenities.map((amenity) => (
         

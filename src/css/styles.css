@@ -25,6 +25,10 @@
     --icon-color: var(--central-black);
 }
 
+body {
+  background-color: var(--central-white);
+}
+
 :root {
   --font-size-xl:  80px;
   --font-size-large: 50px;
@@ -51,6 +55,7 @@
 
 .h2 {
   font-size: var(--font-size-large);
+  line-height: var(--font-size-large);
 }
 
 

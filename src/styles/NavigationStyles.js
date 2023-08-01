@@ -12,7 +12,7 @@ export default styled.header`
     border-bottom: 1px solid var(--central-black);
     section {
         width: 100%;
-        /* background-color: var(--central-white); */
+        background-color: var(--central-white);
         display: flex;
         justify-content: space-between;
         align-items: center;

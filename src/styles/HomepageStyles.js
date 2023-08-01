@@ -17,8 +17,8 @@ export default styled.div`
 .body-copy-container {
     text-align: center;
     padding-top: var(--section-padding-small);
-    padding-left: var(--grid-gutter);
-    padding-right: var(--grid-gutter);
+    /* padding-left: var(--grid-gutter);
+    padding-right: var(--grid-gutter); */
 
     p {
         font-size: var(--font-size-body-copy);
