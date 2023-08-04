@@ -5,12 +5,13 @@ import Image from "./Image";
 import { Formik, useFormik, Field, Form, ErrorMessage } from 'formik';
 import { InterestListSchema } from "../schemas/interestListForm";
 import SteinStore from "stein-js-client";
-
+import "../css/reset.css"
+import '../css/styles.css'
 const store = new SteinStore("https://api.steinhq.com/v1/storages/64c982a2eced9b09e9e8adcf");
 
 
 const onSubmit = async (values, { setSubmitting }, actions) => {
-    debugger
+
     let interestedString =""
     if (values.interested_in.length > 1) {
         interestedString = values.interested_in.join(", ");
@@ -75,7 +76,7 @@ const InterestListForm = () => {
   return (
     <InterestListStyles>
         <section>
-        <h1>Interested?</h1>
+        <h1 className="h2">Interested?</h1>
         <p>
             Be among the first to experience the new standard in Denver living. 
             Sign up for our interest list today and receive exclusive updates
@@ -118,7 +119,7 @@ const InterestListForm = () => {
                     }
                 ])
                 .then( res => {
-                    debugger
+                    
                     if (res.updatedRange) {
                         navigate(`/interest-list/thanks`)
                     }
@@ -134,55 +135,83 @@ const InterestListForm = () => {
          {({ isSubmitting }) => (
         <Form>
             {/* FIRST NAME */}
-            <label htmlFor="first_name">First Name</label>
             <Field 
                 // id="first_name"
                 name="first_name"
                 type="text"
-                placeholder="First Name"
+                // placeholder="First Name"
+                className="question"
+                required
+                autocomplete="off"
                 // className={errors.first_name && touched.first_name ? "input-error" : ""}
            
             />
+            <label htmlFor="first_name"><span>First Name</span></label>
+
             <ErrorMessage component="div" className="error" name="first_name" />
             {/* {errors.first_name && touched.first_name && <p className="error">{errors.first_name}</p>} */}
             
             {/* LAST NAME */}
-            <label htmlFor="last_name">Last Name</label>
             <Field 
                 // id="last_name"
                 name="last_name"
                 type="text"
-                placeholder="Last Name"
+                // placeholder="Last Name"
+                className="question"
+                required
+                autocomplete="off"
                 // className={errors.last_name && touched.last_name ? "input-error" : ""}
             />
+            <label htmlFor="last_name"><span>Last Name</span></label>
+
             <ErrorMessage component="div" className="error" name="last_name" />
             {/* {errors.last_name && touched.last_name && <p className="error">{errors.last_name}</p>} */}
 
             {/* EMAIL */}
-            <label htmlFor="email">Email</label>
+
             <Field 
                 // id="email"
                 name="email"
                 type="email"
-                placeholder="Enter your email"
+                // placeholder="Enter your email"
+                className="question"
+                required
+                autocomplete="off"
                 // className={errors.email && touched.email ? "input-error" : ""}
             />
+            <label htmlFor="email"><span>Email</span></label>
             <ErrorMessage component="div" className="error" name="email" />
             {/* {errors.email && touched.email && <p className="error">{errors.email}</p>} */}
 
             {/* PHONE */}
-            <label htmlFor="phone">Phone</label>
+            
             <Field 
                 // id="phone"
                 name="phone"
                 type="tel"
-                placeholder="Enter your phone number"
+                // placeholder="Enter your phone number"
+                className="question"
+                required
+                autocomplete="off"
                 // className={errors.phone && touched.phone ? "input-error" : ""}
             />
+             <label htmlFor="phone"><span>Phone</span></label>
+           
             <ErrorMessage component="div" className="error" name="phone" />
             {/* {errors.phone && touched.phone && <p className="error">{errors.phone}</p>} */}
 
-            
+            <Field
+                // id="current_city"
+                name="current_city"
+                type="text"
+                // placeholder="Where do you currently live?"
+                className="question"
+                required
+                autocomplete="off"
+                // className={errors.current_city && touched.current_city ? "input-error" : ""}
+            />
+            <label htmlFor="current_city"><span>Current City</span></label>
+            <ErrorMessage component="div" className="error" name="current_city" /> 
 
             {/* INTERESTED IN -- need error classname? */}
             <div id="checkbox-group">I'm interested in...</div>
@@ -203,7 +232,7 @@ const InterestListForm = () => {
             <ErrorMessage component="div" className="error" name="interested_in" />
 
             {/* MOVING DATE */}
-            <label htmlFor="moving_date">Moving Date</label>
+            {/* <label htmlFor="moving_date"><span>Moving Date</span></label> */}
             {/* <Field 
                 // id="moving_date"
                 name="moving_date"
@@ -215,15 +244,8 @@ const InterestListForm = () => {
             {/* {errors.moving_date && touched.moving_date && <p className="error">{errors.moving_date}</p>} */}
 
             {/* CURRENT CITY */}
-            <label htmlFor="current_city">Current City</label>
-            <Field
-                // id="current_city"
-                name="current_city"
-                type="text"
-                placeholder="Where do you currently live?"
-                // className={errors.current_city && touched.current_city ? "input-error" : ""}
-            />
-            <ErrorMessage component="div" className="error" name="current_city" /> 
+            
+          
 
             {/* {errors.current_city && touched.current_city && <p className="error">{errors.current_city}</p>} */}
 

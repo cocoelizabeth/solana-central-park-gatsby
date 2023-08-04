@@ -2,6 +2,9 @@
     font-family: var(--font-family-heading);
 }
 
+header {
+  z-index: 100;
+}
 
 :root {
     --font-family-body: "Fira Mono";

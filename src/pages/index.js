@@ -6,6 +6,7 @@ import { GatsbyImage, getImage, getSrc, getSrcSet} from 'gatsby-plugin-image'
 import HomepageStyles from "../styles/HomepageStyles"
 import Amenities from "../components/Amenities"
 import Image from "../components/Image"
+import '../css/styles.css'
 
 export default function Home() {
   const options = {
@@ -52,6 +53,7 @@ export default function Home() {
                     contentType
                     url
                   }
+                  description
                 }
                 introTextBody {
                   raw
@@ -170,8 +172,9 @@ const slug = homepageData.slug;
 const apartmentAmenitiesData = data.allContentfulPageAmenities.edges[0].node.apartmentAmenities;
 const communityAmenitiesData = data.allContentfulPageAmenities.edges[0].node.communityAmenities;
 const gatsbyImageData = homepageData.heroGallery[0].gatsbyImageData
-const file = homepageData.heroGallery[0].file
-
+const file = homepageData.heroGallery[0].file;
+const altText = homepageData.heroGallery[0].seoDescription;
+debugger
 
 
   return (
@@ -179,7 +182,11 @@ const file = homepageData.heroGallery[0].file
 
       <div className="hero-image-container">
         {/* <Image gatsbyImageData={gatsbyImageData} file={file} ></Image> */}
-        <img src={mainHeroImageSrc} srcSet={mainHeroImageSrcSet} className="hero-image"></img>
+        <img src={mainHeroImageSrc} srcSet={mainHeroImageSrcSet} className="hero-image" alt={altText}></img>
+       
+        <div className="black-background"></div>
+<span className="">Luxury Apartments Leasing 2024</span>
+
       </div>
       <section>
         <div className="body-copy-container">

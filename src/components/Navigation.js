@@ -39,7 +39,7 @@ const Header = () => {
     );
     const headerData = data.allContentfulNavigationHeader.edges[0].node;
     const logoUrl = headerData.logo.url;
-    const logoAltText = headerData.logo.title;
+    const altText = headerData.logo.title;
     const callToActionText = headerData.callToActionText;
     const callToActionLink = headerData.callToActionLink;
 
@@ -56,7 +56,7 @@ const Header = () => {
     <NavigationStyles>
                 {/* <div className="test"></div> */}
         <section>
-        <Link to="/" className="logo-container"><img className="logo" src={logoUrl}></img></Link>
+        <Link to="/" className="logo-container"><img alt={altText} className="logo" src={logoUrl}></img></Link>
 
         <div className='button'>
         <Link to={callToActionLink}><button>{callToActionText}</button></Link>
