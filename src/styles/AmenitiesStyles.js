@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 export default styled.div`
-    border-top: 1px solid var(--central-black);
+
     /* padding-top: var(--section-padding-small); */
 
     .amenity-list-title {

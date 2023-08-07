@@ -59,6 +59,9 @@ export default function Home() {
                   }
                   description
                 }
+                keyHighlights {
+                  raw
+                }
                 introTextBody {
                   raw
                 }
@@ -123,6 +126,7 @@ const heroGalleryArray = homepageData.heroGallery;
 const mainHeroImageSrcSet = homepageData.heroGallery[0].gatsbyImageData.images.sources[0].srcSet;
 const mainHeroImageSrc = homepageData.heroGallery[0].gatsbyImageData.images.fallback.src;
 const introTextBody = homepageData.introTextBody;
+const keyHighlights = homepageData.keyHighlights;
 const pageTitle = homepageData.pageTitle;
 const slug = homepageData.slug;
 // const amenitiesData = data.allContentfulIcons.edges
@@ -147,7 +151,13 @@ const altText = homepageData.heroGallery[0].seoDescription;
 
       </div>
       <Marquee text="Studio, 1, and 2 Bedroom Luxury Apartments. Coming 2024."/>
-      <section>
+      <section className="border-top">
+        <div className="h1 section-title">Quick Info</div>
+        <div className="body-copy-container fade-in key-highlights">
+          {renderRichText(keyHighlights, options)}
+        </div>
+      </section>
+      <section className="border-top">
         <div className="body-copy-container fade-in">
         {renderRichText(introTextBody, options)}
         </div>

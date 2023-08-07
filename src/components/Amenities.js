@@ -67,7 +67,7 @@ const Amenities = ({apartmentAmenities, communityAmenities}) => {
 
   return (
     <AmenitiesStyles>
-        <section>
+        <section className="border-top">
         <div className="h1 amenity-list-title">Community Amenities</div>
         <div className="amenities-list-container">
          

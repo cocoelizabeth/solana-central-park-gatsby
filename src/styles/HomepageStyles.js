@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 export default styled.div`
-:root {
-  
+section {
+    padding-bottom: 2rem;
 }
-
 .hero-image-container {
         padding-top: var(--header-height);
         height: calc(100vh - (var(--header-height) * 3));
@@ -18,7 +17,7 @@ export default styled.div`
     }
 
 .body-copy-container {
-    text-align: center;
+    text-align: left;
     padding-top: var(--section-padding-small);
     /* padding-left: var(--grid-gutter);
     padding-right: var(--grid-gutter); */
@@ -28,6 +27,41 @@ export default styled.div`
         line-height: calc(var(--font-size-body-copy) * 2);
         margin-bottom: 3rem;
     }
+}
+
+.section-title {
+    padding-bottom: 2rem;
+    padding-top: 4rem;
+}
+
+
+.key-highlights > *{
+    text-align: left;
+    font-family: var(--font-family-body);
+
+    b {
+        font-family: var(--font-family-body);
+        font-weight: 600;
+    }
+    b::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+    p {
+        font-family: var(--font-family-body);
+        margin-bottom: 1rem;
+    }
+
+
+}
+
+.key-highlights ul {
+    padding-inline-start: var(--grid-gutter);
+}
+
+.key-highlights > p:nth-child(5){
+    margin-bottom: 0px;
 }
 
 .black-background {

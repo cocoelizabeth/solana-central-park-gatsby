@@ -68,6 +68,10 @@ section {
   padding-left: var(--grid-padding);
 }
 
+.border-top {
+  border-top: 1px solid var(--central-black);
+}
+
 :root {
   --grid-width: 100vw;
   --grid-height: 100vh;

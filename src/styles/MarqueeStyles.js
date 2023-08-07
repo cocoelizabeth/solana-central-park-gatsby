@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 export default styled.div`
 
+background-color: var(--central-black);
+
+
 .marquee {
   --gap: .5rem;
   position: relative;
@@ -8,7 +11,8 @@ export default styled.div`
   overflow: hidden;
   user-select: none;
   gap: var(--gap);
-  background-color: var(--central-black);
+  /* margin-left: var(--grid-gutter);
+  margin-right: var(--grid-gutter); */
 }
 
 .marquee__content {
