@@ -68,12 +68,12 @@ const Amenities = ({apartmentAmenities, communityAmenities}) => {
   return (
     <AmenitiesStyles>
         <section>
-        <div className="h2">Community Amenities</div>
+        <div className="h1 amenity-list-title">Community Amenities</div>
         <div className="amenities-list-container">
          
             {communityAmenitiesList}
         </div>
-        <div className="h2">Apartment Amenities</div>
+        <div className="h1 amenity-list-title">Apartment Amenities</div>
         <div className="amenities-list-container">
           
             {apartmentAmenitiesList}

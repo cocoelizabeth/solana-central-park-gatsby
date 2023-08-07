@@ -1,12 +1,16 @@
-import * as React from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import {renderRichText} from 'gatsby-source-contentful/rich-text'
 import { INLINES, BLOCKS, MARKS } from '@contentful/rich-text-types'
 import { GatsbyImage, getImage, getSrc, getSrcSet} from 'gatsby-plugin-image'
+
 import HomepageStyles from "../styles/HomepageStyles"
-import Amenities from "../components/Amenities"
-import Image from "../components/Image"
+
+
 import '../css/styles.css'
+import Image from "../components/Image"
+import Marquee from "../components/Marquee"
+import Amenities from "../components/Amenities"
 
 export default function Home() {
   const options = {
@@ -111,53 +115,6 @@ export default function Home() {
     `
 );
 
-//   const data = useStaticQuery (
-//     graphql`
-//         query  {
-//           allContentfulPageLandingPage {
-//             edges {
-//               node {
-//                 seoDescription {
-//                   seoDescription
-//                 }
-//                 heroGallery {
-//                   gatsbyImageData
-//                 }
-//                 introTextBody {
-//                   raw
-//                 }
-//                 pageTitle
-//                 slug
-//               }
-//             }
-//           }
-//           allContentfulIcons {
-//             edges {
-//               node {
-//                 title
-//                 image {
-//                   gatsbyImageData
-//                   url
-//                   svg {
-//                     absolutePath
-//                     content
-//                     dataURI
-//                     originalContent
-//                     relativePath
-//                   }
-//                   file {
-//                     url
-//                     contentType
-//                   }
-//                 }
-//               }
-//             }
-//           }
-//         }
-        
-//     `
-// );
-
 
 
 const homepageData = data.allContentfulPageLandingPage.edges[0].node;
@@ -174,22 +131,24 @@ const communityAmenitiesData = data.allContentfulPageAmenities.edges[0].node.com
 const gatsbyImageData = homepageData.heroGallery[0].gatsbyImageData
 const file = homepageData.heroGallery[0].file;
 const altText = homepageData.heroGallery[0].seoDescription;
-debugger
+
+
 
 
   return (
     <HomepageStyles>
 
-      <div className="hero-image-container">
+      <div className="hero-image-container fade-in">
         {/* <Image gatsbyImageData={gatsbyImageData} file={file} ></Image> */}
         <img src={mainHeroImageSrc} srcSet={mainHeroImageSrcSet} className="hero-image" alt={altText}></img>
        
-        <div className="black-background"></div>
-<span className="">Luxury Apartments Leasing 2024</span>
+        {/* <div className="black-background"></div>
+        <span className="h1">New Denver Luxury Apartments. Leasing 2024</span> */}
 
       </div>
+      <Marquee text="Studio, 1, and 2 Bedroom Luxury Apartments. Coming 2024."/>
       <section>
-        <div className="body-copy-container">
+        <div className="body-copy-container fade-in">
         {renderRichText(introTextBody, options)}
         </div>
 

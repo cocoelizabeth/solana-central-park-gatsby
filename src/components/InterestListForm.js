@@ -75,8 +75,7 @@ const InterestListForm = () => {
 
   return (
     <InterestListStyles>
-        <section>
-        <h1 className="h2">Interested?</h1>
+        <h1 className="h1">Interested?</h1>
         <p>
             Be among the first to experience the new standard in Denver living. 
             Sign up for our interest list today and receive exclusive updates
@@ -143,6 +142,7 @@ const InterestListForm = () => {
                 className="question"
                 required
                 autocomplete="off"
+                placeholder=" "
                 // className={errors.first_name && touched.first_name ? "input-error" : ""}
            
             />
@@ -160,6 +160,8 @@ const InterestListForm = () => {
                 className="question"
                 required
                 autocomplete="off"
+                placeholder=" "
+                
                 // className={errors.last_name && touched.last_name ? "input-error" : ""}
             />
             <label htmlFor="last_name"><span>Last Name</span></label>
@@ -173,10 +175,11 @@ const InterestListForm = () => {
                 // id="email"
                 name="email"
                 type="email"
-                // placeholder="Enter your email"
+                
                 className="question"
                 required
                 autocomplete="off"
+                placeholder=" "
                 // className={errors.email && touched.email ? "input-error" : ""}
             />
             <label htmlFor="email"><span>Email</span></label>
@@ -193,6 +196,7 @@ const InterestListForm = () => {
                 className="question"
                 required
                 autocomplete="off"
+                placeholder=" "
                 // className={errors.phone && touched.phone ? "input-error" : ""}
             />
              <label htmlFor="phone"><span>Phone</span></label>
@@ -208,6 +212,7 @@ const InterestListForm = () => {
                 className="question"
                 required
                 autocomplete="off"
+                placeholder=" "
                 // className={errors.current_city && touched.current_city ? "input-error" : ""}
             />
             <label htmlFor="current_city"><span>Current City</span></label>
@@ -258,7 +263,6 @@ const InterestListForm = () => {
         </Form>
          )}
         </Formik>
-        </section>
     </InterestListStyles>  
     )
 }; 

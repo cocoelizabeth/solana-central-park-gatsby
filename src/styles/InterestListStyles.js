@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 export default styled.div`
-    margin-top: var(--header-height);
-    padding-top: 4rem;
+    padding-top: calc( var(--header-height) + 2rem) ;
+
 
     form {
         display: flex;
@@ -23,16 +23,8 @@ export default styled.div`
         opacity: 0.35;
     }
 
-    body {
-  margin: 5% auto 0 auto;
-  width: 90%;
-  max-width: 1125px;
-}
+ 
 
-h1 {
-  font-size: 28px;
-  margin-bottom: 2.5%;
-}
 
 input,
 span,
@@ -49,12 +41,12 @@ textarea:focus,
 input:focus {
   outline: 0;
 }
-/* Question */
 
+
+/* Question */
 input.question,
 textarea.question {
-  font-size: 48px;
-  font-weight: 300;
+  font-size: var(--font-size-large);
   border-radius: 2px;
   margin: 0;
   border: none;
@@ -85,26 +77,31 @@ textarea.question:focus + label {
 }
 
 input.question:focus,
-input.question:valid {
+input.question:valid,
+input.question:not(:placeholder-shown) {
   padding-top: 35px;
 }
 
 textarea.question:valid,
-textarea.question:focus {
+textarea.question:focus,
+textarea.question:not(:placeholder-shown) {
   margin-top: 35px;
 }
 
+
 input.question:focus + label > span,
-input.question:valid + label > span {
+input.question:valid + label > span,
+input.question:not(:placeholder-shown) + label > span {
   top: -100px;
-  font-size: 22px;
+  font-size: var(--font-size-body-copy);
   color: #333;
 }
 
 textarea.question:focus + label > span,
-textarea.question:valid + label > span {
+textarea.question:valid + label > span,
+textarea.question:not(:placeholder-shown) + label > span {
   top: -150px;
-  font-size: 22px;
+  font-size: var(--font-size-body-copy);
   color: #333;
 }
 
@@ -124,7 +121,7 @@ textarea.question + label > span {
   margin: 0;
   position: absolute;
   color: #8F8F8F;
-  font-size: 48px;
+  font-size: var(--font-size-large);
   top: -66px;
   left: 0px;
   z-index: -1;
@@ -171,6 +168,9 @@ input.question:invalid ~ input[type="submit"], textarea.question:invalid ~ input
   }
 }
 
-    
+input:-webkit-autofill,
+  input:-webkit-autofill:focus {
+    transition: background-color 0s 600000s, color 0s 600000s;
+  }
     
 `;

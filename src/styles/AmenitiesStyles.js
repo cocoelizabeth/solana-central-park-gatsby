@@ -3,7 +3,7 @@ export default styled.div`
     border-top: 1px solid var(--central-black);
     /* padding-top: var(--section-padding-small); */
 
-    .h2 {
+    .amenity-list-title {
         padding-bottom: 2rem;
         padding-top: 4rem;
     }

@@ -33,8 +33,8 @@ body {
 }
 
 :root {
-  --font-size-xl:  80px;
-  --font-size-large: 50px;
+  --font-size-xl:  50px;
+  --font-size-large: 30px;
   --font-size-body-copy: 15px;
 
   --font-size-small: 14px;
@@ -54,6 +54,7 @@ body {
 
 .h1 {
   font-size: var(--font-size-xl);
+  line-height: var(--font-size-xl);
 }
 
 .h2 {
@@ -86,6 +87,38 @@ section {
   }
 }
 
+/* animations  */
+.fade-in {
+  animation: fadeIn ease 3s;
+  -webkit-animation: fadeIn ease 3s;
+  -moz-animation: fadeIn ease 3s;
+  -o-animation: fadeIn ease 3s;
+  -ms-animation: fadeIn ease 3s;
+}
+@keyframes fadeIn {
+  0% {opacity:0; visibility: hidden;}
+  100% {opacity:1; visibility:visible}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0; visibility: hidden;}
+  100% {opacity:1; visibility:visible}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0; visibility: hidden;}
+  100% {opacity:1; visibility:visible}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity:0; visibility: hidden;}
+  100% {opacity:1; visibility:visible}
+}
+
+@-ms-keyframes fadeIn {
+  0% {opacity:0; visibility: hidden;}
+  100% {opacity:1; visibility:visible}
+}
 
 
 

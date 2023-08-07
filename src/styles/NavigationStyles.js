@@ -22,10 +22,12 @@ export default styled.header`
         width: 33%;
         margin-top: var(--nav-margin-top);
         margin-bottom: var(--nav-margin-top);
+        animation: fadeIn 1s forwards;
         
     }
     .logo {
         height: var(--logo-height);
+       
     }
 
     .button {
@@ -65,11 +67,29 @@ export default styled.header`
     stroke: var(--central-olive);
     stroke-width: 8px;
     stroke-dasharray: 0 1500;
+
+    animation: draw 1s forwards;
+    animation-delay: 3s;
     /* animation: drawReverse 1s backwards; */
+  }
+
+  .button path.animation-delay-none {
+    animation-delay: 0s;
+  }
+  
+
+  button:hover {
+    cursor: pointer;
   }
   
   .button:hover path {
-    animation: draw 1s forwards;
+    /* animation: draw 1s forwards; */
+    animation: drawAgain 1s forwards;
+    stroke-dasharray: 1500 0;
+  }
+
+  .animation-delay {
+
   }
   
   @keyframes draw {
@@ -90,6 +110,18 @@ export default styled.header`
   
     to {
       stroke-dasharray: 0 1500;
+    }
+  }
+
+  @keyframes drawAgain {
+    from {
+      stroke-dasharray: 0 1500;
+      opacity:0;
+    }
+  
+    to {
+      stroke-dasharray: 1500 1500;
+      opacity: 1;
     }
   }
 `;
