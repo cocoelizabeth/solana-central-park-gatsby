@@ -25,7 +25,7 @@ header {
     --central-olive: #848672ff;
     --central-forest: #4F564B;
 
-    --icon-color: var(--central-black);
+    --icon-color: var(--central-dark-grey);
 }
 
 body {

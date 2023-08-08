@@ -3,8 +3,8 @@ import { graphql, useStaticQuery, Link } from "gatsby"
 import {renderRichText} from 'gatsby-source-contentful/rich-text'
 import { INLINES, BLOCKS, MARKS } from '@contentful/rich-text-types'
 import { GatsbyImage, getImage, getSrc, getSrcSet} from 'gatsby-plugin-image'
-
-import HomepageStyles from "../styles/HomepageStyles"
+import HomepageStyles from "../styles/HomepageStyles";
+import Footer from "../components/Footer";
 
 
 import '../css/styles.css';
@@ -158,19 +158,7 @@ const altText = homepageData.heroGallery[0].seoDescription;
         apartmentAmenities={apartmentAmenitiesData} 
         communityAmenities={communityAmenitiesData}
       />
-      {/* <section className="border-top">
-        <div className="h1 section-title">Quick Info</div>
-        <div className="body-copy-container fade-in key-highlights">
-          {renderRichText(keyHighlights, options)}
-        </div>
-      </section>
-      <section className="border-top">
-        <div className="body-copy-container fade-in">
-        {renderRichText(introTextBody, options)}
-        </div>
-
-      </section>
-      <Amenities apartmentAmenities={apartmentAmenitiesData} communityAmenities={communityAmenitiesData} /> */}
+      <Footer/>
      
     </HomepageStyles>
   )

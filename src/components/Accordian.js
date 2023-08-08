@@ -53,7 +53,7 @@ const Accordian = ({keyHighlights, introTextBody, apartmentAmenities, communityA
 
       const accordianData = [
         {
-            title: "Quick Highlights",
+            title: "Highlights",
             content: keyHighlights,
         },
         {

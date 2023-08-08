@@ -15,7 +15,6 @@ import Image from "./Image";
 
 const Amenities = ({apartmentAmenities, communityAmenities}) => {
 
-    debugger
     // const data = useStaticQuery (
     //     graphql`
     //         query  {
