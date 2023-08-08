@@ -42,12 +42,12 @@ background-color: var(--central-black);
 }
 
 .marquee__content {
-  animation: scroll 13s linear infinite;
+  animation: scroll 20s linear infinite;
 }
 
-.marquee--hover-pause:hover .marquee__content {
+/* .marquee--hover-pause:hover .marquee__content {
   animation-play-state: paused;
-}
+} */
 
 .marquee__content > * {
   flex: 0 0 auto;
