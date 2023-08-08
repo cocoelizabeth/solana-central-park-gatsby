@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 export default styled.div`
-    padding-top: calc( var(--header-height) + 2rem) ;
+    padding-top: calc( var(--header-height) + 4rem) ;
 
 
     form {
@@ -103,6 +103,7 @@ textarea.question:not(:placeholder-shown) + label > span {
   top: -150px;
   font-size: var(--font-size-body-copy);
   color: #333;
+  padding-top: 2rem;
 }
 
 input.question:valid + label,
@@ -173,4 +174,37 @@ input:-webkit-autofill,
     transition: background-color 0s 600000s, color 0s 600000s;
   }
     
+
+.h1 {
+  padding-bottom: 2rem;
+}
+form {
+  padding-top: 4rem;
+}
+
+input, label {
+  margin-bottom: 3rem;
+  /* align-items: baseline;
+  align-self: baseline;
+  align-content: baseline; */
+}
+
+.error {
+  padding-bottom: 2rem;
+}
+
+label {
+  margin-top: 1rem;
+
+}
+
+label span {
+  padding-top: 1rem;
+}
+input.question {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
 `;
