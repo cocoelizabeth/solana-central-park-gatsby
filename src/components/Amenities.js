@@ -14,6 +14,8 @@ import Image from "./Image";
 
 
 const Amenities = ({apartmentAmenities, communityAmenities}) => {
+
+    debugger
     // const data = useStaticQuery (
     //     graphql`
     //         query  {
@@ -49,7 +51,7 @@ const Amenities = ({apartmentAmenities, communityAmenities}) => {
       
 
     const apartmentAmenitiesList = apartmentAmenities.map((amenity) => (
-
+        
         <div className="amenity-list-item">
             <div className="icon-container">
                 {/* <img src={amenity.node.image.url} altText={amenity.node.title}></img> */}

@@ -72,6 +72,10 @@ section {
   border-top: 1px solid var(--central-black);
 }
 
+.border-bottom {
+  border-bottom: 1px solid var(--central-black);
+}
+
 :root {
   --grid-width: 100vw;
   --grid-height: 100vh;

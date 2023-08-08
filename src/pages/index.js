@@ -7,10 +7,11 @@ import { GatsbyImage, getImage, getSrc, getSrcSet} from 'gatsby-plugin-image'
 import HomepageStyles from "../styles/HomepageStyles"
 
 
-import '../css/styles.css'
-import Image from "../components/Image"
-import Marquee from "../components/Marquee"
-import Amenities from "../components/Amenities"
+import '../css/styles.css';
+import Image from "../components/Image";
+import Marquee from "../components/Marquee";
+import Amenities from "../components/Amenities";
+import Accordian from "../components/Accordian";
 
 export default function Home() {
   const options = {
@@ -151,7 +152,13 @@ const altText = homepageData.heroGallery[0].seoDescription;
 
       </div>
       <Marquee text="Studio, 1, and 2 Bedroom Luxury Apartments. Coming 2024."/>
-      <section className="border-top">
+      <Accordian 
+        keyHighlights = {renderRichText(keyHighlights, options)}
+        introTextBody = {renderRichText(introTextBody, options)}
+        apartmentAmenities={apartmentAmenitiesData} 
+        communityAmenities={communityAmenitiesData}
+      />
+      {/* <section className="border-top">
         <div className="h1 section-title">Quick Info</div>
         <div className="body-copy-container fade-in key-highlights">
           {renderRichText(keyHighlights, options)}
@@ -163,7 +170,7 @@ const altText = homepageData.heroGallery[0].seoDescription;
         </div>
 
       </section>
-      <Amenities apartmentAmenities={apartmentAmenitiesData} communityAmenities={communityAmenitiesData} />
+      <Amenities apartmentAmenities={apartmentAmenitiesData} communityAmenities={communityAmenitiesData} /> */}
      
     </HomepageStyles>
   )

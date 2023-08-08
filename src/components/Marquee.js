@@ -33,8 +33,8 @@ export default function Marquee ({text}) {
       
     </div> */}
 
-<div class="marquee marquee--hover-pause">
-    <ul class="marquee__content">
+<div className="marquee marquee--hover-pause">
+    <ul className="marquee__content">
       <li className="scroll-text">Studio, 1 & 2 Bedroom Apartments.</li>
       <li className="scroll-text">Coming 2024.</li>
       <li className="scroll-text"><Link to="/interest-list">Join the Priority List</Link><span className="arrow">→</span></li>
