@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery, Link } from "gatsby"
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import FooterStyles from "../styles/FooterStyles";
 
 const Footer = () => {

@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, useState } from "react"
+import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import {renderRichText} from 'gatsby-source-contentful/rich-text'
 import { INLINES, BLOCKS, MARKS } from '@contentful/rich-text-types'
-import { GatsbyImage, getImage, getSrc, getSrcSet} from 'gatsby-plugin-image'
+// import { GatsbyImage, getImage, getSrc, getSrcSet} from 'gatsby-plugin-image'
 import HomepageStyles from "../styles/HomepageStyles";
 import Footer from "../components/Footer";
 
@@ -148,7 +148,7 @@ const altText = homepageData.heroGallery[0].seoDescription;
         <img src={mainHeroImageSrc} srcSet={mainHeroImageSrcSet} className="hero-image" alt={altText}></img>
        
         {/* <div className="black-background"></div>
-        <span className="h1">New Denver Luxury Apartments. Leasing 2024</span> */}
+        <span className="h1 gold-2">COMING SOON</span> */}
 
       </div>
       <Marquee text="Studio, 1, and 2 Bedroom Luxury Apartments. Coming 2024."/>
@@ -158,7 +158,6 @@ const altText = homepageData.heroGallery[0].seoDescription;
         apartmentAmenities={apartmentAmenitiesData} 
         communityAmenities={communityAmenitiesData}
       />
-      <Footer/>
      
     </HomepageStyles>
   )

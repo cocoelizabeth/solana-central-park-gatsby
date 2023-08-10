@@ -1,8 +1,7 @@
 import { graphql, useStaticQuery, Link } from "gatsby"
-
 import React, { useState, useEffect } from 'react';
-import HeaderStyles from '../styles/HeaderStyles';
 import NavigationStyles from "../styles/NavigationStyles";
+import Image from './Image'
 // import { MdClose } from 'react-icons/md';
 // import clsx from 'clsx';
 // import HeaderStyles from '../styles/HeaderStyles';
@@ -22,14 +21,21 @@ const Header = () => {
                         callToActionLink
                         callToActionText
                         logo {
-                        file {
+                            file {
+                                url
+                                contentType
+                                fileName
+                            }
+                            svg {
+                                absolutePath
+                                content
+                                dataURI
+                                originalContent
+                                relativePath
+                            }
+                            gatsbyImageData
+                            title
                             url
-                            contentType
-                            fileName
-                        }
-                        gatsbyImageData
-                        title
-                        url
                         }
                     }
                     }
@@ -38,6 +44,8 @@ const Header = () => {
         `
     );
     const headerData = data.allContentfulNavigationHeader.edges[0].node;
+    const logoFile = headerData.logo.file;
+    const logoSvg = headerData.logo.svg;
     const logoUrl = headerData.logo.url;
     const altText = headerData.logo.title;
     const callToActionText = headerData.callToActionText;
@@ -53,14 +61,7 @@ const Header = () => {
 //   };
 
     let [animationDelay, setState] = useState(true);
-    console.log('#1 animationDelay is')
-    console.log(animationDelay)
-    // const timer = ()=> {
-    //     console.log(`#3. in timer preSet State ${animationDelay}`)
-    //     setState(!animationDelay)
-    //     console.log(`#4. in timer post set State ${animationDelay}`)
 
-    // }
 
     useEffect(() => {
     const timer = setTimeout(() => setState(!animationDelay), 4000);
@@ -72,7 +73,12 @@ const Header = () => {
     <NavigationStyles>
                 {/* <div className="test"></div> */}
         <section className="">
-        <Link to="/" className="logo-container"><img alt={altText} className="logo" src={logoUrl}></img></Link>
+        <Link to="/" className="logo-container">
+            {/* <Image file={logoFile} svg={logoSvg} alt={altText} cssClass="logo"/> */}
+            <img alt={altText} className="logo" src={logoUrl}></img>
+        </Link>
+
+        {/* <Link to="/" className="logo-container"><img alt={altText} className="logo" src={logoUrl}></img></Link> */}
 
         <div className='button'>
         <Link to={callToActionLink}><button>{callToActionText}</button></Link>

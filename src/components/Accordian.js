@@ -25,7 +25,7 @@ const Accordian = ({keyHighlights, introTextBody, apartmentAmenities, communityA
         <div className="amenity-list-item">
             <div className="icon-container">
                 {/* <img src={amenity.node.image.url} altText={amenity.node.title}></img> */}
-               <Image file={amenity.image.file} svg={amenity.image.svg} alt={amenity.title}></Image> 
+               <Image file={amenity.image.file} svg={amenity.image.svg} alt={amenity.title} cssClass="amenity-icon-svg"></Image> 
             </div>
             <div className="text-container">
                 <p>{amenity.title}</p>
@@ -41,7 +41,7 @@ const Accordian = ({keyHighlights, introTextBody, apartmentAmenities, communityA
         <div className="amenity-list-item">
             <div className="icon-container">
                 {/* <img src={amenity.node.image.url} altText={amenity.node.title}></img> */}
-               <Image file={amenity.image.file} svg={amenity.image.svg} alt={amenity.title}></Image> 
+               <Image file={amenity.image.file} svg={amenity.image.svg} alt={amenity.title} cssClass={"amenity-icon-svg"}></Image> 
             </div>
             <div className="text-container">
                 <p>{amenity.title}</p>

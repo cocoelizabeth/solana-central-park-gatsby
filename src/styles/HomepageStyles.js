@@ -143,5 +143,57 @@ span.drop-shadow-animation-text {
 }
 
 
+/* GOLD TEXT */
+
+span.gold{
+   position: absolute;
+   transform: translate(-50%,-50%);
+   top: 50%;
+   left: 50%;
+   letter-spacing: 5px;
+   font-size: 150px;
+   font-size: 80px;
+   font-weight: bold;
+   background-image: linear-gradient(
+	to right,
+	#462523 0,
+       	#cb9b51 22%, 
+	#f6e27a 45%,
+	#f6f2c0 50%,
+	#f6e27a 55%,
+	#cb9b51 78%,
+	#462523 100%
+	);
+   color:transparent;
+   -webkit-background-clip:text;
+   height: 100%;
+    top: calc(50% + var(--header-height));
+    margin: auto;
+    line-height: 80px;
+
+}
+
+span.outline-shadow {
+    -webkit-text-stroke: 1px black;
+   color: white;
+   text-shadow:
+       3px 3px 0 #000,
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+}
+
+span.gold-2 {
+    color: #D5AD6D; /*if no support for background-clip*/
+background: -webkit-linear-gradient(transparent, transparent),
+-webkit-linear-gradient(top, rgba(213,173,109,1) 0%, rgba(213,173,109,1) 26%, rgba(226,186,120,1) 35%, rgba(163,126,67,1) 45%, rgba(145,112,59,1) 61%, rgba(213,173,109,1) 100%);
+background: -o-linear-gradient(transparent, transparent);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+-webkit-text-stroke: 2px black;
+/* font-size: 80px; */
+}
+
 
 `;

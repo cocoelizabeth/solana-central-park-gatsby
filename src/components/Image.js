@@ -3,16 +3,20 @@ import propTypes from 'prop-types'
 import { GatsbyImage } from 'gatsby-plugin-image'
 
 // Render inline SVG with fallback non-svg images
-export default function Image({ svg, gatsbyImageData, file, alt }) {
-    let cssClass = "amenity-icon-svg";
+export default function Image({ svg, gatsbyImageData, file, alt, cssClass}) {
+  let imageCssClass = cssClass;
+
+
     if (file.contentType === 'image/svg+xml') {
-    if (svg && svg.content) {
-       if (alt === 'Woodfire Pizza Oven') {
-        cssClass = "amenity-icon-svg-line"
-       }
-      // Inlined SVGs
-      return <div dangerouslySetInnerHTML={{ __html: svg.content }} className={cssClass} />
-    }
+      if (svg && svg.content) {
+
+        // class for line icons
+        if (alt === 'Woodfire Pizza Oven') {
+          imageCssClass = "amenity-icon-svg-line"
+        }
+        // Inlined SVGs
+        return <div dangerouslySetInnerHTML={{ __html: svg.content }} className={imageCssClass} alt={alt} />
+      }
 
     // SVGs that can/should not be inlined
     return <img src={file.url} alt={alt} />

@@ -32,7 +32,7 @@ const onSubmit = async (values, { setSubmitting }, actions) => {
         }
     ])
     .then( res => {
-        console.log(res);
+        // console.log(res);
     });
     // actions.resetForm()
 }
@@ -122,7 +122,7 @@ const InterestListForm = () => {
                     if (res.updatedRange) {
                         navigate(`/interest-list/thanks`)
                     }
-                    console.log(res);
+                    // console.log(res);
                     
                 })
                 actions.resetForm();
