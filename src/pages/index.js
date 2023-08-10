@@ -4,7 +4,6 @@ import {renderRichText} from 'gatsby-source-contentful/rich-text'
 import { INLINES, BLOCKS, MARKS } from '@contentful/rich-text-types'
 // import { GatsbyImage, getImage, getSrc, getSrcSet} from 'gatsby-plugin-image'
 import HomepageStyles from "../styles/HomepageStyles";
-import { SEO } from "../components/seo";
 
 import Marquee from "../components/Marquee";
 
