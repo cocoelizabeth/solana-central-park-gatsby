@@ -28,8 +28,10 @@ export default styled.footer`
 
 .team-item {
     display: flex;
+  
     a {
         margin-right: 6px;
+
     }
 
 }
@@ -37,6 +39,19 @@ export default styled.footer`
  a {
 
         color: var(--central-white)
+}
+
+.team-item {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-xs);
+    margin-top: 12px;
+    text-transform: uppercase;
+    a {
+        font-size: var(--font-size-body-copy);
+        text-transform: capitalize;
+    }
 }
 
 

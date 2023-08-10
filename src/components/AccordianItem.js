@@ -16,7 +16,7 @@ class AccordianItem extends React.Component {
         this.accordianContent = React.createRef();
         this.accordianTitle = React.createRef();
         this.handleAccordianItemClick = this.handleAccordianItemClick.bind(this);
-        debugger
+        
 
     }
 

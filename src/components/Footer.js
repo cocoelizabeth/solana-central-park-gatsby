@@ -18,7 +18,25 @@ const Footer = () => {
             <a href="mailto:info@solanacentralpark.com">info@SolanaCentralPark.com</a>
             <div className="team">
                 <div className="title">Team</div>
-                <div className="team-item">
+
+           
+                <div className="team-items-container">
+                  <div className="team-item">
+                      <a href="https://reylenn.com/reylenn-properties">Reylenn Properties</a>
+                  Developer
+                  </div>
+          
+                  <div className="team-item">
+                      <a href="https://reylenn.com/reylenn-construction">Reylenn Construction</a>
+                    General Contractor
+                    </div>
+
+                    <div className="team-item">
+                      <a href="https://reylenn.com/reylenn-properties">Wood Residential</a>
+                      Property Management 
+                    </div>
+                  </div>
+                {/* <div className="team-item">
                     <a href="https://reylenn.com/reylenn-properties">Reylenn Properties</a>
                   | Developer
                 </div>
@@ -31,7 +49,7 @@ const Footer = () => {
                   <div className="team-item">
                     <a href="https://reylenn.com/reylenn-properties">Wood Residential</a>
                   | Property Management 
-                  </div>
+                  </div> */}
             </div>
         </section>
 
