@@ -207,4 +207,17 @@ input.question {
   justify-content: flex-end;
 }
 
+label.placeholder  {
+  padding-bottom: 2rem;
+}
+
+.form-item {
+  margin-bottom: 2rem;
+}
+
+.errors-container {
+  color: var(--central-brick);
+  padding-top: 2rem;
+}
+
 `;

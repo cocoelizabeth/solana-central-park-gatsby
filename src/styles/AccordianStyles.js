@@ -7,6 +7,7 @@ export default styled.div`
 
     ul.accordian-container {
         padding-inline-start: 0px;
+        margin-block-end: 0px;
     }
 
     .border-bottom {

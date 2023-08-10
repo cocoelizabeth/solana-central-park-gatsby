@@ -4,6 +4,7 @@ export default styled.footer`
  color: var(--central-white);
 
  padding-top: 4rem;
+ padding-bottom: 4rem;
  .h2 {
    
  }

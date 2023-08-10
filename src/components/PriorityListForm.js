@@ -77,13 +77,13 @@ export default class PriorityListForm extends React.Component {
         switch (input.name) {
             case 'first_name':
                 errors.first_name = 
-                    input.value.length < 3
+                    input.value.length < 2
                         ? 'First name must be at least two characters long.'
                         : "";
                 break;
             case 'last_name':
                 errors.last_name = 
-                    input.value.length < 3
+                    input.value.length < 2
                         ? 'Last name must be at least two characters long.'
                         : "";
                     break;
@@ -272,7 +272,7 @@ export default class PriorityListForm extends React.Component {
                             </label>
                         </p>
 
-                        <div className="field line">
+                            <div className="form-item">
                                 <input
                                     className="req question"
                                     maxLength={240}
@@ -282,14 +282,16 @@ export default class PriorityListForm extends React.Component {
                                     required="required"
                                     id="first_name"
                                     onChange={this.handleFormChange}
+                                    placeholder=" "
                                 />
                                 <label className="placeholder" htmlFor="first_name">
                                     <span>First Name</span>
                                     {/* <span className="underline-form-field">Name</span> */}
                                 </label>
-                        </div>
+                            </div>
+                      
                         
-                        <div className="field line">
+                            <div className="form-item">
                                 <input
                                     className="req question"
                                     maxLength={240}
@@ -299,14 +301,15 @@ export default class PriorityListForm extends React.Component {
                                     required="required"
                                     id="last_name"
                                     onChange={this.handleFormChange}
+                                    placeholder=" "
                                 />
                                 <label className="placeholder" htmlFor="last_name">
                                     <span>Last Name</span>
                                     {/* <span className="underline-form-field">Name</span> */}
                                 </label>
-                        </div>
+                            </div>
 
-                        <div className="field line">
+                            <div className="form-item">
                                 <input
                                     className="req question"
                                     maxLength={240}
@@ -316,14 +319,15 @@ export default class PriorityListForm extends React.Component {
                                     required="required"
                                     id="email"
                                     onChange={this.handleFormChange}
+                                    placeholder=" "
                                 />
                                 <label className="placeholder" htmlFor="email">
                                     <span>Email</span>
                                     {/* <span className="underline-form-field">Name</span> */}
                                 </label>
-                        </div>
+                            </div>  
 
-                        <div className="field line">
+                            <div className="form-item">
                                 <input
                                     className="req question"
                                     maxLength={240}
@@ -333,13 +337,15 @@ export default class PriorityListForm extends React.Component {
                                     required="required"
                                     id="phone"
                                     onChange={this.handleFormChange}
+                                    placeholder=" "
                                 />
                                 <label className="placeholder" htmlFor="phone">
                                     <span>Phone</span>
                                     {/* <span className="underline-form-field">Name</span> */}
                                 </label>
-                        </div>
-                        <div className="field line">
+                            </div>   
+
+                            <div className="form-item">
                                 <input
                                     className="req question"
                                     maxLength={240}
@@ -349,12 +355,13 @@ export default class PriorityListForm extends React.Component {
                                     required="required"
                                     id="current_city"
                                     onChange={this.handleFormChange}
+                                    placeholder=" "
                                 />
                                 <label className="placeholder" htmlFor="current_city">
                                     <span>Current City</span>
                                     {/* <span className="underline-form-field">Name</span> */}
                                 </label>
-                        </div>
+                            </div>          
 
                         <div className="submit-btn-container">
                             <button
