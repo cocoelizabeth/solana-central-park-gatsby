@@ -3,7 +3,7 @@ import Amenities from "./Amenities";
 class AccordianItem extends React.Component {
     constructor(props) {
         super(props)
-    
+ 
         this.title = this.props.data.title;
         this.content = this.props.data.content;
         this.index = this.props.index;
@@ -17,6 +17,7 @@ class AccordianItem extends React.Component {
         this.accordianContent = React.createRef();
         this.accordianTitle = React.createRef();
         this.handleAccordianItemClick = this.handleAccordianItemClick.bind(this);
+        debugger
 
     }
 
@@ -24,6 +25,8 @@ class AccordianItem extends React.Component {
         this.accordianContent.current.classList.toggle("reveal");
         this.accordianTitle.current.classList.toggle("reveal");
     }
+
+
 
     render() {
       let firstItem;
@@ -44,6 +47,7 @@ class AccordianItem extends React.Component {
                     className="accordian-item-card border-bottom"
                     id={`pos-${this.index}`}
                     onClick = {this.handleAccordianItemClick}
+                    key={this.title}
                 >
                 <div ref={this.accordianTitle} className="accordian-title">{this.title}</div>
                 <div className="accordian-content amenities" ref={this.accordianContent}>
@@ -69,6 +73,7 @@ class AccordianItem extends React.Component {
                     className="accordian-item-card border-bottom"
                     id={`pos-${this.index}`}
                     onClick = {this.handleAccordianItemClick}
+                    key={this.title}
                 >
                     <div ref={this.accordianTitle}  className={`accordian-title ${firstItem}`}>{this.title}</div>
                     <div className={`accordian-content ${firstItem}`} ref={this.accordianContent}>

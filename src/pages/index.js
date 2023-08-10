@@ -135,7 +135,7 @@ const apartmentAmenitiesData = data.allContentfulPageAmenities.edges[0].node.apa
 const communityAmenitiesData = data.allContentfulPageAmenities.edges[0].node.communityAmenities;
 const gatsbyImageData = homepageData.heroGallery[0].gatsbyImageData
 const file = homepageData.heroGallery[0].file;
-const altText = homepageData.heroGallery[0].seoDescription;
+const altText = homepageData.heroGallery[0].description;
 
 
 

@@ -77,16 +77,17 @@ const Accordian = ({keyHighlights, introTextBody, apartmentAmenities, communityA
     ]
 
     const accordianHtml = accordianData.map((data,index) => (
-       <AccordianItem data={accordianData[index]} index={index} />
+
+       <AccordianItem data={accordianData[index]} index={index} key={data.title}/>
     ))
 
  
 
   return (
     <AccordianStyles>
-        <div className="accordian-container">
+        <ul className="accordian-container">
             {accordianHtml}
-        </div>
+        </ul>
     {/* <div className="ac-container">
         <div key="keyHighlights">
             <input id="ac-1" name="accordion-1" type="checkbox" checked/>

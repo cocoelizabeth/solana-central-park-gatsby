@@ -5,6 +5,10 @@ export default styled.div`
     /* DEFINE ACCORDIAN WIDTH AND CENTER */
     width: 100%;
 
+    ul.accordian-container {
+        padding-inline-start: 0px;
+    }
+
     .border-bottom {
         border-bottom: 1px solid var(--central-dark-grey);
     }
@@ -32,7 +36,7 @@ export default styled.div`
     }
 
 
-
+    
     .accordian-content {
         display: none;
         font-size: .9rem;
