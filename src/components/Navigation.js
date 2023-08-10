@@ -44,8 +44,8 @@ const Header = () => {
         `
     );
     const headerData = data.allContentfulNavigationHeader.edges[0].node;
-    const logoFile = headerData.logo.file;
-    const logoSvg = headerData.logo.svg;
+    // const logoFile = headerData.logo.file;
+    // const logoSvg = headerData.logo.svg;
     const logoUrl = headerData.logo.url;
     const altText = headerData.logo.title;
     const callToActionText = headerData.callToActionText;
@@ -71,7 +71,6 @@ const Header = () => {
 
   return (
     <NavigationStyles>
-                {/* <div className="test"></div> */}
         <section className="">
         <Link to="/" className="logo-container">
             {/* <Image file={logoFile} svg={logoSvg} alt={altText} cssClass="logo"/> */}

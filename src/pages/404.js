@@ -5,7 +5,10 @@ import { Link } from 'gatsby'
 // import InterestListThanks from "../../components/InterestListThanks"
 export default function NotFound() {
   return (
-    
-    <div>404</div>
+    <section>
+          <h1>404: Page Not Found</h1>
+          <Link to="/"><h2>Go Back to the Homepage</h2></Link>
+    </section>
+
   )
 }

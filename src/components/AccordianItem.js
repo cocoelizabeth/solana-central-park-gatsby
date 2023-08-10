@@ -1,5 +1,4 @@
 import React from "react";
-import Amenities from "./Amenities";
 class AccordianItem extends React.Component {
     constructor(props) {
         super(props)
@@ -34,10 +33,6 @@ class AccordianItem extends React.Component {
          firstItem = "reveal"
       }
 
-//       return (
-//         <li></li>
-//    )
-//         }
         
  
         

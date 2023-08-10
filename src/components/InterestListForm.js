@@ -1,7 +1,6 @@
 import { graphql, useStaticQuery, Link, navigate } from "gatsby"
 import React, { useState } from 'react';
 import InterestListStyles from "../styles/InterestListStyles";
-import Image from "./Image";
 import { Formik, useFormik, Field, Form, ErrorMessage } from 'formik';
 import { InterestListSchema } from "../schemas/interestListForm";
 import SteinStore from "stein-js-client";

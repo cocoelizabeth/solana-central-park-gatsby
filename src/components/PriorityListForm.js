@@ -1,10 +1,7 @@
-import { graphql, useStaticQuery, Link, navigate } from "gatsby"
-import React, { useState } from 'react';
-import InterestListStyles from "../styles/InterestListStyles";
+import { navigate } from "gatsby"
+import React from 'react';
 
 import SteinStore from "stein-js-client";
-import "../css/reset.css"
-import '../css/styles.css'
 import PriorityListStyles from "../styles/PriorityListStyles";
 const store = new SteinStore("https://api.steinhq.com/v1/storages/64c982a2eced9b09e9e8adcf");
 
@@ -30,7 +27,6 @@ export default class PriorityListForm extends React.Component {
         this.formRef = React.createRef();
         this.btnRef = React.createRef();
         this.formContainerRef = React.createRef();
-        // this.formContainerRef = React.createRef();
         this.loadingSpinnerRef = React.createRef();
       
 
@@ -142,26 +138,26 @@ export default class PriorityListForm extends React.Component {
             const current_city = data.current_city;
             this.showLoadingSpinner();
 
-            let event = {
-                mode: "no-cors",
-                method: "POST",
-                headers: {
-                    Accept: "application/json",
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    senderName: '"SOLANA CENTRAL PARK" <info@solanacentralpark.com>',
-                    senderEmail: "info@solanacentralpark.com",
-                    message: "NEW MESSAGE",
-                    firstName: first_name,
-                    lastName: last_name,
-                    email: email,
-                    date: date,
-                    time: time,
-                    phone: phone,
-                    subject: subject,
-                })
-            }
+            // let event = {
+            //     mode: "no-cors",
+            //     method: "POST",
+            //     headers: {
+            //         Accept: "application/json",
+            //         "Content-Type": "application/json",
+            //     },
+            //     body: JSON.stringify({
+            //         senderName: '"SOLANA CENTRAL PARK" <info@solanacentralpark.com>',
+            //         senderEmail: "info@solanacentralpark.com",
+            //         message: "NEW MESSAGE",
+            //         firstName: first_name,
+            //         lastName: last_name,
+            //         email: email,
+            //         date: date,
+            //         time: time,
+            //         phone: phone,
+            //         subject: subject,
+            //     })
+            // }
         
 
         fetch (
@@ -224,8 +220,12 @@ export default class PriorityListForm extends React.Component {
             requiredField.classList.remove("ui-full")
         })
         this.btnRef.current.disabled=true;
-        this.state.formData={};
-        this.state.errors={};
+        // this.state.formData={};
+        // this.state.errors={};
+        this.setState({
+            formData: {},
+            errors: {},
+        })
     }
 
 

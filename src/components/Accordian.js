@@ -1,10 +1,6 @@
-import { graphql, useStaticQuery, Link } from "gatsby"
-
-import React, { useState } from 'react';
-import AmenitiesStyles from "../styles/AmenitiesStyles";
+import React from 'react';
 import Image from "./Image";
 import AccordianStyles from "../styles/AccordianStyles";
-import Amenities from "./Amenities";
 import AccordianItem from "./AccordianItem";
 
 // import { MdClose } from 'react-icons/md';

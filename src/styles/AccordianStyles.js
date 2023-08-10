@@ -17,8 +17,8 @@ export default styled.div`
     .accordian-item-card {
         list-style: none;
         cursor: pointer;
-        padding-left: var(--grid-gutter);
-        padding-right: var(--grid-gutter);
+        padding-left: var(--grid-padding);
+        padding-right: var(--grid-padding);
     }
     
     /* MAKE LABELS APPEAR AS CLICKABLE BUTTONS
@@ -62,6 +62,7 @@ export default styled.div`
         background: transparent url(data:image/svg+xml,%3Csvg%20stroke%3D%22currentColor%22%20fill%3D%22currentColor%22%20stroke-width%3D%220%22%20viewBox%3D%220%200%201024%201024%22%20height%3D%221em%22%20width%3D%221em%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M8.2%20275.4c0-8.6%203.4-17.401%2010-24.001%2013.2-13.2%2034.8-13.2%2048%200l451.8%20451.8%20445.2-445.2c13.2-13.2%2034.8-13.2%2048%200s13.2%2034.8%200%2048L542%20775.399c-13.2%2013.2-34.8%2013.2-48%200l-475.8-475.8c-6.8-6.8-10-15.4-10-24.199z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E) no-repeat center center;	
         margin: 2rem 0px;
         z-index: 2;
+        right: var(--grid-padding);
     }
 
     .accordian-title:hover {
@@ -94,6 +95,7 @@ export default styled.div`
                 color: var(--central-olive);
                 text-decoration: none;
                 border-bottom: 1px solid var(--central-olive);
+                font-family: var(--font-family-body);
             }
             a:hover {
                 color: var(--central-light-grey);
@@ -104,6 +106,7 @@ export default styled.div`
                 content: "→";
                 text-decoration: none;
                 padding-left: 5px;
+              
                 
             }
         }

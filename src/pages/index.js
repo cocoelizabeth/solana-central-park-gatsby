@@ -1,17 +1,17 @@
 import React from "react"
-import { graphql, useStaticQuery, Link } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import {renderRichText} from 'gatsby-source-contentful/rich-text'
 import { INLINES, BLOCKS, MARKS } from '@contentful/rich-text-types'
 // import { GatsbyImage, getImage, getSrc, getSrcSet} from 'gatsby-plugin-image'
 import HomepageStyles from "../styles/HomepageStyles";
-import Footer from "../components/Footer";
 
 
-import '../css/styles.css';
-import Image from "../components/Image";
 import Marquee from "../components/Marquee";
-import Amenities from "../components/Amenities";
+
 import Accordian from "../components/Accordian";
+
+import Image from "../components/Image";
+import Amenities from "../components/Amenities";
 
 export default function Home() {
   const options = {
@@ -122,20 +122,22 @@ export default function Home() {
 
 
 const homepageData = data.allContentfulPageLandingPage.edges[0].node;
-const seoDescription = homepageData.seoDescription.seoDescription;
-const heroGalleryArray = homepageData.heroGallery;
+// const seoDescription = homepageData.seoDescription.seoDescription;
+// const heroGalleryArray = homepageData.heroGallery;
 const mainHeroImageSrcSet = homepageData.heroGallery[0].gatsbyImageData.images.sources[0].srcSet;
 const mainHeroImageSrc = homepageData.heroGallery[0].gatsbyImageData.images.fallback.src;
 const introTextBody = homepageData.introTextBody;
 const keyHighlights = homepageData.keyHighlights;
-const pageTitle = homepageData.pageTitle;
-const slug = homepageData.slug;
+// const pageTitle = homepageData.pageTitle;
+// const slug = homepageData.slug;
 // const amenitiesData = data.allContentfulIcons.edges
 const apartmentAmenitiesData = data.allContentfulPageAmenities.edges[0].node.apartmentAmenities;
 const communityAmenitiesData = data.allContentfulPageAmenities.edges[0].node.communityAmenities;
+
+const altText = homepageData.heroGallery[0].description;
+
 const gatsbyImageData = homepageData.heroGallery[0].gatsbyImageData
 const file = homepageData.heroGallery[0].file;
-const altText = homepageData.heroGallery[0].description;
 
 
 

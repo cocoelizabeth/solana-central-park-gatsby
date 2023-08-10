@@ -9,6 +9,7 @@ export default function InterestListThanks() {
     <InterestListThanksStyles>
         <section>
         <div>Thanks</div>
+        <Link to="/">Return to Homepage</Link>
         </section>
     </InterestListThanksStyles>
 
