@@ -4,7 +4,7 @@ import {renderRichText} from 'gatsby-source-contentful/rich-text'
 import { INLINES, BLOCKS, MARKS } from '@contentful/rich-text-types'
 // import { GatsbyImage, getImage, getSrc, getSrcSet} from 'gatsby-plugin-image'
 import HomepageStyles from "../styles/HomepageStyles";
-
+import { SEO } from "../components/seo";
 
 import Marquee from "../components/Marquee";
 
@@ -122,13 +122,13 @@ export default function Home() {
 
 
 const homepageData = data.allContentfulPageLandingPage.edges[0].node;
-// const seoDescription = homepageData.seoDescription.seoDescription;
+const seoDescription = homepageData.seoDescription.seoDescription;
 // const heroGalleryArray = homepageData.heroGallery;
 const mainHeroImageSrcSet = homepageData.heroGallery[0].gatsbyImageData.images.sources[0].srcSet;
 const mainHeroImageSrc = homepageData.heroGallery[0].gatsbyImageData.images.fallback.src;
 const introTextBody = homepageData.introTextBody;
 const keyHighlights = homepageData.keyHighlights;
-// const pageTitle = homepageData.pageTitle;
+const pageTitle = homepageData.pageTitle;
 // const slug = homepageData.slug;
 // const amenitiesData = data.allContentfulIcons.edges
 const apartmentAmenitiesData = data.allContentfulPageAmenities.edges[0].node.apartmentAmenities;
@@ -162,6 +162,17 @@ const file = homepageData.heroGallery[0].file;
       />
      
     </HomepageStyles>
+  )
+}
+
+export function Head() {
+  return (
+    <>
+    <title>Solana Central Park Apartments | Home</title>
+    <meta name="description" content="Located in Denver’s charming Central Park neighborhood (formerly Stapleton), and just a 15 minute drive from downtown Denver, Solana Central Park features 307 pet-friendly, rental apartments. Residents can choose from nine different floor plans that range from studios, one-bedroom, and two-bedroom options.
+
+With over 22,000 square feet of curated amenities, Solana Central Park offers a resort-style swimming pool and spa with shaded cabanas, an indoor/outdoor health and fitness center with private workout studios, and a coworking space with individual workspaces and conference rooms. Other useful amenities include a pet spa, resident parcel pending, on-site management, bike storage and repair facilities, gated garage parking, and EV charging stations. Set against the stunning backdrop of the Colorado Rocky mountains, residents will also enjoy access to over 1,000 acres of nearby parks and open space, coupled with 60 miles of biking and walking trails." />
+    </>
   )
 }
 

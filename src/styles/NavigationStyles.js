@@ -27,7 +27,7 @@ export default styled.header`
     }
     .logo {
         height: var(--logo-height);
-       
+        aspect-ratio: 58 / 17;
     }
 
     .button {

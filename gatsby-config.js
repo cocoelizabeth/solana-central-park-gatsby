@@ -17,7 +17,7 @@ module.exports = {
     title: `Solana Central Park`,
     description: 'Luxury Apartments for Rent in Denver, Colorado. Coming 2024',
     // image: '/recess-chrome-v2-optimized.gif',
-    // siteUrl: `https://www.recess.studio`
+    siteUrl: `https://solanacentralpark.netlify.app`
   },
   plugins: [
     `gatsby-plugin-image`,
