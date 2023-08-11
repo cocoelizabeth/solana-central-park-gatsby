@@ -9,31 +9,18 @@ export default class PriorityListForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            formData: {
-                first_name: "",
-                last_name: "",
-                email: "",
-                phone: "",
-                current_city: "",
-            },
-            interestedIn: {
-                studio: false,
-                oneBedroom: false,
-                twoBedroom: false,
-            },
+            formData: {},
             errors: {},
         }
 
         this.handleFormChange = this.handleFormChange.bind(this);
-        this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
         this.handleErrors = this.handleErrors.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.showLoadingSpinner = this.showLoadingSpinner.bind(this);
         this.hideLoadingSpinner = this.hideLoadingSpinner.bind(this);
         this.resetForm = this.resetForm.bind(this)
-        this.noBoxesChecked = this.noBoxesChecked.bind(this);
-        this.requiredInputsAreBlank = this.requiredInputsAreBlank.bind(this);
-        this.toggleSubmitButton = this.toggleSubmitButton.bind(this);
+
+
 
 
         this.errorsRef = React.createRef();
@@ -45,53 +32,8 @@ export default class PriorityListForm extends React.Component {
 
     }
 
-
-    noBoxesChecked() {
-        let boxesBlank = true;
-        Array.from(document.getElementsByClassName('checkbox-option')).forEach((checkbox) => {
-            if (checkbox.checked) {
-               boxesBlank = false;
-            }
-        })
-        return boxesBlank;
-
-    }
-
-    requiredInputsAreBlank() {
-        let empty = false;
-        let requiredFormFields = Array.from(document.getElementsByClassName('req'));
-        requiredFormFields.forEach((requiredField) => {
-            if (requiredField.value === "") {
-                empty = true;
-            }
-        })
-        return empty;
-    }
-
-    toggleSubmitButton () {
-        if (!(this.requiredInputsAreBlank()) && !(this.noBoxesChecked()) && this.validateForm(this.state.errors)) {
-            this.btnRef.current.disabled = false;
-        } else {
-            this.btnRef.current.disabled = true;
-        }
-    }
-
-    handleCheckboxChange(e) {
-        const { value, checked } = e.currentTarget;
-        const input = e.currentTarget;
-        this.setState((prevState) => {
-            const interestedIn = prevState.interestedIn;
-            interestedIn[value] = checked;
-            return interestedIn;
-          });
-        this.handleErrors(input)
-        this.toggleSubmitButton();
-
-
-    }
-
-
     handleFormChange(e) {
+        let empty = false;
         let input = e.currentTarget;
             this.setState({
                 formData: {
@@ -99,8 +41,28 @@ export default class PriorityListForm extends React.Component {
                     [e.target.name]: e.target.value
                 }
             })
-            this.handleErrors(input);
-            this.toggleSubmitButton();
+
+        let requiredFormFields = Array.from(document.getElementsByClassName('req'));
+        requiredFormFields.forEach((requiredField) => {
+            if (requiredField.value === "") {
+                requiredField.classList.remove("ui-full")
+            } else {
+                requiredField.classList.add("ui-full")
+            }
+        })
+
+        Array.from(document.getElementsByTagName('input')).forEach((input) => {
+            if (input.value === "" && !(input.classList.contains('optional-field'))) {
+                empty = true;
+            }
+        })
+
+        if (empty) {
+            this.btnRef.current.disabled = true;
+        } else {
+            this.btnRef.current.disabled = false;
+        }
+        this.handleErrors(input)
     }
 
     handleErrors(input) {
@@ -143,12 +105,6 @@ export default class PriorityListForm extends React.Component {
                         ? 'Please enter your current city.'
                         : "";
                     break;
-            case 'interested_in': {
-                errors.interestedIn =
-                    this.noBoxesChecked()
-                    ? "Please choose at least one type of floor plan."
-                    : "";
-            }
             default:
                 break;
         }
@@ -180,11 +136,28 @@ export default class PriorityListForm extends React.Component {
             const subject = ["Interest List: ", first_name, " ", last_name].join("");
             const phone = data.phone;
             const current_city = data.current_city;
-            const interested_in = Object.keys(this.state.interestedIn)
-            .filter((key) => this.state.interestedIn[key])
-            .join(", ");
             this.showLoadingSpinner();
 
+            // let event = {
+            //     mode: "no-cors",
+            //     method: "POST",
+            //     headers: {
+            //         Accept: "application/json",
+            //         "Content-Type": "application/json",
+            //     },
+            //     body: JSON.stringify({
+            //         senderName: '"SOLANA CENTRAL PARK" <info@solanacentralpark.com>',
+            //         senderEmail: "info@solanacentralpark.com",
+            //         message: "NEW MESSAGE",
+            //         firstName: first_name,
+            //         lastName: last_name,
+            //         email: email,
+            //         date: date,
+            //         time: time,
+            //         phone: phone,
+            //         subject: subject,
+            //     })
+            // }
         
 
         fetch (
@@ -208,7 +181,6 @@ export default class PriorityListForm extends React.Component {
                 subject: subject,
                 phone: phone,
                 current_city: current_city,
-                interested_in: interested_in,
             })
         })
         .then(response => console.log(response))
@@ -226,13 +198,16 @@ export default class PriorityListForm extends React.Component {
 
 
     showLoadingSpinner() {
-        this.formContainerRef.current.classList.add('blur')
-        this.loadingSpinnerRef.current.classList.add('show')
+        // debugger
+        // this.formContainerRef.current.classList.add('blur')
+        // debugger
+        // this.loadingSpinnerRef.current.classList.add('show')
+        // debugger
     }
 
     hideLoadingSpinner() {
-        this.careerFormRef.current.classList.remove('blur');
-        this.loadingSpinnerRef.current.classList.remove('show')
+        this.showLoadingSpinner = this.showLoadingSpinner.bind(this);
+        this.hideLoadingSpinner = this.hideLoadingSpinner.bind(this);
     }
 
 
@@ -262,11 +237,9 @@ export default class PriorityListForm extends React.Component {
             )
         })
 
-        console.log(this.state.errors)
-
         return (
             <PriorityListStyles>
-                <div ref={this.formContainerRef}>
+                <div ref="formContainerRef">
                     <h1 className="h1">Interested?</h1>
                     <p>
                         Be among the first to experience the new standard in Denver living. 
@@ -274,9 +247,8 @@ export default class PriorityListForm extends React.Component {
                         and leasing opportunities.
                     </p>
                     {/* ERRORS - COME BACK */}
-                    {/* <div ref={this.errorsRef} className="errors-container display-none">{errors}</div> */}
-                    <div ref={this.errorsRef} className="errors-container display-none">{}</div>
-
+                    <div ref={this.errorsRef} className="errors-container display-none">{errors}</div>
+                
                     <form
                         name="interest-list-sign-up"
                         method="post"
@@ -315,17 +287,7 @@ export default class PriorityListForm extends React.Component {
                                 <label className="placeholder" htmlFor="first_name">
                                     <span>First Name</span>
                                     {/* <span className="underline-form-field">Name</span> */}
-                                </label>               
-                                    {this.state.errors.first_name ? (
-                                         <div className="error">
-                                            {this.state.errors.first_name}
-                                        </div>
-
-                                    ) : (
-                                        <div className="error"></div>
-                                    )
-                                    }
-                                
+                                </label>
                             </div>
                       
                         
@@ -345,15 +307,6 @@ export default class PriorityListForm extends React.Component {
                                     <span>Last Name</span>
                                     {/* <span className="underline-form-field">Name</span> */}
                                 </label>
-                                {this.state.errors.last_name ? (
-                                         <div className="error">
-                                            {this.state.errors.last_name}
-                                        </div>
-
-                                    ) : (
-                                        <div className="error"></div>
-                                    )
-                                    }
                             </div>
 
                             <div className="form-item">
@@ -372,15 +325,6 @@ export default class PriorityListForm extends React.Component {
                                     <span>Email</span>
                                     {/* <span className="underline-form-field">Name</span> */}
                                 </label>
-                                {this.state.errors.email ? (
-                                         <div className="error">
-                                            {this.state.errors.email}
-                                        </div>
-
-                                    ) : (
-                                        <div className="error"></div>
-                                    )
-                                }
                             </div>  
 
                             <div className="form-item">
@@ -399,17 +343,7 @@ export default class PriorityListForm extends React.Component {
                                     <span>Phone</span>
                                     {/* <span className="underline-form-field">Name</span> */}
                                 </label>
-                                {this.state.errors.phone ? (
-                                         <div className="error">
-                                            {this.state.errors.phone}
-                                        </div>
-
-                                    ) : (
-                                        <div className="error"></div>
-                                    )
-                                }   
-                            </div>
-
+                            </div>   
 
                             <div className="form-item">
                                 <input
@@ -427,69 +361,7 @@ export default class PriorityListForm extends React.Component {
                                     <span>Current City</span>
                                     {/* <span className="underline-form-field">Name</span> */}
                                 </label>
-                                {this.state.errors.current_city ? (
-                                         <div className="error">
-                                            {this.state.errors.current_city}
-                                        </div>
-
-                                    ) : (
-                                        <div className="error"></div>
-                                    )
-                                }   
-                            </div> 
-
-
-                            <div className="form-item">
-                                <div id="checkbox-group" className="checkbox-group-title">I'm interested in...</div>
-                                <div role="group" aria-labelledby="checkbox-group"> 
-                                    <label className="checkbox-label container">Studio
-                                        <input
-                                            className="checkbox-option"
-                                            type="checkbox" 
-                                            onChange={this.handleCheckboxChange} 
-                                            checked={this.state.interestedIn.studio}
-                                            name="interested_in"
-                                            value="studio"          
-                                        />
-                                        <span value="studio" name="interested_in" className="checkmark"></span>
-                                       
-                                    </label>
-                                    <label className="checkbox-label container">   One Bedroom
-                                        <input
-                                            className="checkbox-option"
-                                            type="checkbox"
-                                            onChange={this.handleCheckboxChange} 
-                                            name="interested_in"
-                                            value="oneBedroom"
-                                            checked={this.state.interestedIn.oneBedroom}
-                                        />
-                                        <span className="checkmark" onClick={this.handleCheckboxChange}></span>
-                                     
-                                    </label>     
-                                    <label className="checkbox-label container">   Two Bedroom
-                                        <input
-                                            className="checkbox-option"
-                                            type="checkbox"
-                                            onChange={this.handleCheckboxChange} 
-                                            name="interested_in"
-                                            value="twoBedroom"
-                                            checked={this.state.interestedIn.twoBedroom}
-                                        />
-                                        <span className="checkmark" onClick={this.handleCheckboxChange}></span>
-                                     
-                                    </label>               
-                                </div>
-                                {this.state.errors.interestedIn ? (
-                                         <div className="error">
-                                            {this.state.errors.interestedIn}
-                                        </div>
-
-                                    ) : (
-                                        <div className="error"></div>
-                                    )
-                                }   
-                 
-                            </div>           
+                            </div>          
 
                         <div className="submit-btn-container">
                             <button
@@ -500,15 +372,12 @@ export default class PriorityListForm extends React.Component {
                                 ref={this.btnRef}>
                                 SIGN UP
                             </button>
-                            <svg viewBox="0 0 500 150" preserveAspectRatio="none">
-                                <path  fill="none" d="M325,18C228.7-8.3,118.5,8.3,78,21C22.4,38.4,4.6,54.6,5.6,77.6c1.4,32.4,52.2,54,142.6,63.7 c66.2,7.1,212.2,7.5,273.5-8.3c64.4-16.6,104.3-57.6,33.8-98.2C386.7-4.9,179.4-1.4,126.3,20.7" />
-                            </svg>
                         </div>
 
                     </form>
                 </div>
 
-                <div ref={this.loadingSpinnerRef} className="submit-spinner">
+                <div ref={this.loadingSpinnerRef} className="submit-spinner-careers">
                     <div className="loading-spinner"></div>
                     {/* <img className="logo not-found-logo" src={logoGif} alt="Logo" /> */}
                 </div>
@@ -518,5 +387,4 @@ export default class PriorityListForm extends React.Component {
 
 
 }
-
 

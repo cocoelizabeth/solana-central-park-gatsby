@@ -22,6 +22,7 @@ export default styled.footer`
 
     p {
         font-family: var(--font-family-body);
+        text-decoration: none;
     }
 
 
@@ -53,6 +54,14 @@ export default styled.footer`
         font-size: var(--font-size-body-copy);
         text-transform: capitalize;
     }
+}
+
+.copyright {
+    padding-top: 3rem;
+    font-family: var(--font-family-body);
+    text-align: left;
+    width: 100%;
+    font-size: var(--font-size-xs);
 }
 
 
