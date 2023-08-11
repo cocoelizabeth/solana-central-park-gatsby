@@ -1,22 +1,43 @@
 import styled from 'styled-components';
 export default styled.div`
 
-  --input-label-text-color: var(--central-dark-grey);
 
-    padding-top: calc( var(--header-height) + 4rem) ;
+
+    padding-left: var(--grid-padding);
+    padding-right: var(--grid-padding);
+    padding-top: calc( var(--header-height) + 4rem);
     padding-bottom: 4rem;
+    
+    background-color: var(--central-light);
+    --input-label-text-color: var(--central-pewter);
+    --heading-text-color: var(--central-pewter);
+    --placeholder-text-color: var(--central-grey);
+    --error-color: var(--central-light-brown);
+    --input-focus-color: var(--central-olive);
+    --border-color: var(--central-grey);
+    --checkbox-background-color: var(--central-white);
+    --checkbox-hover-color: var(--central-grey);
+    --checkbox-check-color: var(--central-white);
+
+    .form-title {
+      padding-bottom: 2rem;
+      color: var(--heading-text-color);
+      font-weight: 400;
+    }
+
+    .form-description {
+      color: var(--heading-text-color);
+      margin-bottom: 3rem;
+    }
+
 
     form {
         display: flex;
         flex-direction: column;
     }
-    input.input-error,
-    select.input-error {
-        border-color: red;
-      
-    }
+
     .error {
-        color: red;
+        color: var(--error-color);
         font-style: italic;
         font-family: var(--font-family-body);
         font-size: var(--font-size-xs);
@@ -37,14 +58,15 @@ label,
 textarea {
   display: block;
   border: none;
-  /* margin: 10px;
-  padding: 5px;
-  font-size: 22px; */
 }
 
+
+textarea,
+input,
 textarea:focus,
 input:focus {
   outline: 0;
+  color: var(--input-focus-color);
 }
 
 
@@ -70,10 +92,11 @@ textarea.question + label {
   padding: 0;
   margin: 0;
   width: 100%;
-  border-top: 1px solid var(--central-charcoal);
+  border-top: 1px solid var(--border-color);
   -webkit-transition: width 0.4s ease;
   transition: width 0.4s ease;
   height: 0px;
+  z-index: 1;
 }
 
 input.question:focus + label,
@@ -84,20 +107,20 @@ textarea.question:focus + label {
 input.question:focus,
 input.question:valid,
 input.question:not(:placeholder-shown) {
-  padding-top: 35px;
+  padding: 0;
 }
 
 textarea.question:valid,
 textarea.question:focus,
 textarea.question:not(:placeholder-shown) {
-  margin-top: 35px;
+  margin: 0;
 }
 
 
 input.question:focus + label > span,
 input.question:valid + label > span,
 input.question:not(:placeholder-shown) + label > span {
-  top: -100px;
+  top: -85px;
   font-size: var(--font-size-body-copy);
   color: var(--input-label-text-color);
   font-family: var(--font-family-body);
@@ -114,7 +137,7 @@ textarea.question:not(:placeholder-shown) + label > span {
 
 input.question:valid + label,
 textarea.question:valid + label {
-  border-color: var(--central-olive);
+  border-color: var(--input-focus-color);
 }
 
 input.question:invalid,
@@ -127,7 +150,7 @@ textarea.question + label > span {
   font-weight: 300;
   margin: 0;
   position: absolute;
-  color: var(--central-medium-grey);
+  color: var(--placeholder-text-color);
   font-size: var(--font-size-large);
   top: -66px;
   left: 0px;
@@ -178,8 +201,6 @@ input.question:invalid ~ input[type="submit"], textarea.question:invalid ~ input
     position: relative;
     display: inline-block;
     cursor: pointer;
-    /* width:121px;
-    width: auto; */
     max-width: 300px;
     height: auto;
     line-height: 14px;
@@ -212,15 +233,10 @@ input.question:invalid ~ input[type="submit"], textarea.question:invalid ~ input
     stroke: var(--central-olive);
     stroke-width: 8px;
     stroke-dasharray: 1500 1500;
-
-    /* animation: draw 1s forwards; */
-   
-    /* animation: drawReverse 1s backwards; */
   }
 
   button:disabled + svg {
-    opacity: 50%;
-    transition: opacity 2s ease-in;
+    opacity: 35%;
 
   }
 
@@ -232,30 +248,15 @@ input.question:invalid ~ input[type="submit"], textarea.question:invalid ~ input
     cursor: pointer;
   }
   
-  .button:hover path {
-    /* animation: draw 1s forwards; */
-
-    stroke-dasharray: 1500 1500;
-  }
-
-  /* button:enabled {
-    animation: draw 1s forwards;
-  }
-
-  button:: {
-
-  } */
 
 
-input:-webkit-autofill,
+
+
+  input:-webkit-autofill,
   input:-webkit-autofill:focus {
     transition: background-color 0s 600000s, color 0s 600000s;
   }
     
-
-.h1 {
-  padding-bottom: 2rem;
-}
 
 
 input, label {
@@ -288,22 +289,20 @@ label.placeholder  {
   margin-bottom: 1rem;
 }
 
-.errors-container {
-  color: var(--central-brick);
-  padding-top: 2rem;
-}
 
 .cls-1 {
-  fill: var(--central-white);
+  fill: var(--checkbox-check-color);
 }
 .checkbox-group-title {
   font-size: var(--font-size-large);
+  color: var(--heading-text-color);
   
 }
 label.checkbox-label {
   font-family: var(--font-family-body);
   text-transform: uppercase;
   font-size: var(--font-size-body-copy);
+  color: var(--input-label-text-color);
 }
 
 /* Customize the label (the container) */
@@ -317,7 +316,6 @@ label.container {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-
 }
 
 /* Hide the browser's default checkbox */
@@ -327,8 +325,6 @@ label.container {
   cursor: pointer;
   height: 0;
   width: 0;
-  /* margin: 0;
-  padding: 0; */
   font-size: 0px;
   
 }
@@ -340,18 +336,17 @@ label.container {
   left: 0;
   height: 25px;
   width: 25px;
-  background-color: var(--central-light-grey);
-  /* border: 1px solid var(--central-medium-grey); */
+  background-color: var(--checkbox-background-color);
 }
 
 /* On mouse-over, add a grey background color */
 .container:hover input ~ .checkmark {
-  background-color: var(--central-grey);
+  background-color: var(--checkbox-hover-color);
 }
 
 /* When the checkbox is checked, add a blue background */
 .container input:checked ~ .checkmark {
-  background-color: var(--central-olive);
+  background-color: var(--input-focus-color);
   border: 0px;
 }
 

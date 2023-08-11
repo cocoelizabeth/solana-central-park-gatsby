@@ -6,8 +6,8 @@ import PriorityListForm from "../../components/PriorityListForm"
 
 export default function PriorityList() {
   return (
-   <section>
+
     <PriorityListForm />
-   </section>
+
   )
 }

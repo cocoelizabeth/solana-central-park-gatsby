@@ -35,8 +35,6 @@ export default class PriorityListForm extends React.Component {
         this.requiredInputsAreBlank = this.requiredInputsAreBlank.bind(this);
         this.toggleSubmitButton = this.toggleSubmitButton.bind(this);
 
-
-        this.errorsRef = React.createRef();
         this.formRef = React.createRef();
         this.btnRef = React.createRef();
         this.formContainerRef = React.createRef();
@@ -218,7 +216,6 @@ export default class PriorityListForm extends React.Component {
         .then(() => navigate("/interest-list/thanks"))
         .catch(error => alert(error));
     } else {
-        this.errorsRef.current.classList.remove('display-none');
         this.btnRef.current.disabled = true;
     } 
 
@@ -267,15 +264,13 @@ export default class PriorityListForm extends React.Component {
         return (
             <PriorityListStyles>
                 <div ref={this.formContainerRef}>
-                    <h1 className="h1">Interested?</h1>
-                    <p>
+                    <h1 className="h1 form-title">Interested?</h1>
+                    <p className="form-description">
                         Be among the first to experience the new standard in Denver living. 
                         Sign up for our interest list today and receive exclusive updates
                         and leasing opportunities.
                     </p>
-                    {/* ERRORS - COME BACK */}
-                    {/* <div ref={this.errorsRef} className="errors-container display-none">{errors}</div> */}
-                    <div ref={this.errorsRef} className="errors-container display-none">{}</div>
+                  
 
                     <form
                         name="interest-list-sign-up"

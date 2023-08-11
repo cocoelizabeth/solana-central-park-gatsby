@@ -12,11 +12,12 @@ header {
     --font-family-heading: "Marcellus";
 
     --central-white: #F7F6F6;
-    --central-light: ##f8efea;
+    --central-light: #ECE9E9;
     --central-warm-grey: #CBC3BAff;
     --central-light-grey: #E1DEDCff;
-    --central-grey: #BBB7B2ff;
     --central-medium-grey:#C0BDB9;
+    --central-grey: #BBB7B2ff;
+
     --central-dark-grey: #77766F;
     --central-pewter:#514E49;
     --central-charcoal: #444142;

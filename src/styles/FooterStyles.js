@@ -19,6 +19,9 @@ export default styled.footer`
 
  div.address {
     padding-bottom: 2rem;
+    a {
+        text-decoration: none;
+    }
 
     p {
         font-family: var(--font-family-body);
@@ -62,6 +65,13 @@ export default styled.footer`
     text-align: left;
     width: 100%;
     font-size: var(--font-size-xs);
+    display: flex;
+    align-items: center;
+ 
+}
+
+.copyright-text {
+    margin-left: 5px;
 }
 
 
