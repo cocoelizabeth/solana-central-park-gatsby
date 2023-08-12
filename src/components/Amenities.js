@@ -1,5 +1,3 @@
-import { graphql, useStaticQuery, Link } from "gatsby"
-
 import React, { useState } from 'react';
 import AmenitiesStyles from "../styles/AmenitiesStyles";
 import Image from "./Image";

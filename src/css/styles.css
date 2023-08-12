@@ -38,6 +38,7 @@ body {
   --font-size-xl:  50px;
   --font-size-large: 30px;
   --font-size-body-copy: 15px;
+  --font-size-h3: 20px;
 
   --font-size-small: 14px;
   --font-size-xs: 10px;
@@ -49,8 +50,16 @@ body {
 
   --section-padding-small: 3rem;
 }
-.h1, .h2,.h3, .h4, .h5 {
+.h1, .h2, .h3{
   font-family: var(--font-family-heading);
+}
+
+ .h4, .h5 {
+  font-family: var(--font-family-body);
+  > b {
+    font-family: var(--font-family-body);
+    font-weight: 500;
+  }
 }
 
 
@@ -62,6 +71,10 @@ body {
 .h2 {
   font-size: var(--font-size-large);
   line-height: var(--font-size-large);
+}
+
+.h3 {
+  font-size: var(--font-size-h3);
 }
 
 

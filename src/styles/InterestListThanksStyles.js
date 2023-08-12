@@ -2,24 +2,30 @@ import styled from 'styled-components';
 export default styled.div`
     margin-top: var(--header-height);
     padding-top: 4rem;
+    padding-bottom: 4rem;
+    position: relative;
+    flex-direction: column;
+    display: flex;
+    color: var(--central-dark-grey);
+    .h1 {
+        font-weight: 400;
+        padding-bottom: 2rem;
+    }
 
-    form {
-        display: flex;
-        flex-direction: column;
+    .h3 {
+        padding-top: 2rem;
+        padding-bottom: 1rem;
     }
-    input.input-error,
-    select.input-error {
-        border-color: red;
-      
-    }
-    .error {
-        color: red;
-        font-style: italic;
+    p {
+        line-height: 30px;
         font-family: var(--font-family-body);
-        font-size: var(--font-size-xs);
-    }
+        position: relative;
 
-    button:disabled {
-        opacity: 0.35;
     }
+   .cta {
+    margin-top: 2rem;
+    width: 100%;
+    /* height: 40px; */
+    display: flex;
+   }
 `;

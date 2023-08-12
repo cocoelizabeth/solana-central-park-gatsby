@@ -34,6 +34,7 @@ export default class PriorityListForm extends React.Component {
         this.noBoxesChecked = this.noBoxesChecked.bind(this);
         this.requiredInputsAreBlank = this.requiredInputsAreBlank.bind(this);
         this.toggleSubmitButton = this.toggleSubmitButton.bind(this);
+        this.addToSpreadsheet = this.addToSpreadsheet.bind(this)
 
         this.formRef = React.createRef();
         this.btnRef = React.createRef();
@@ -163,6 +164,43 @@ export default class PriorityListForm extends React.Component {
         return valid;
     }
 
+    addToSpreadsheet(first_name, last_name, email, date, time, phone, current_city, interested_in) {
+        debugger
+        let interestedList = "";
+        let interestedArray = interested_in.split(",");
+        let newArray = [];
+        interestedArray.forEach((floorplan) => {
+            switch(floorplan) {
+                case 'studio':
+                    newArray.push("Studio");
+                case 'oneBedroom':
+                    newArray.push("One Bedroom");
+                case 'twoBedroom':
+                    newArray.push("Two Bedroom");
+                default:
+                    break;
+            }
+        interestedList = newArray.join(", ")
+        })
+
+        debugger
+        store
+        .append("Interest List", [
+            {
+                date: date,
+                time: time,
+                first_name: first_name,
+                last_name: last_name,
+                email: email,
+                phone: phone,
+                current_city: current_city,
+                interested_in: interestedList
+        
+            }
+        ])
+
+    }
+
     handleSubmit = e => {
         const form = e.target;
         e.preventDefault();
@@ -183,7 +221,7 @@ export default class PriorityListForm extends React.Component {
             .join(", ");
             this.showLoadingSpinner();
 
-        
+            this.addToSpreadsheet(first_name, last_name, email, date, time, phone, current_city, interested_in)
 
         fetch (
             "https://v7u9b4rtpc.execute-api.us-east-2.amazonaws.com/sendEmail", 

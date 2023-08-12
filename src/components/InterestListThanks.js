@@ -1,15 +1,16 @@
 import * as React from "react"
-import { Link } from 'gatsby'
-// import '../css/reset.css'
-// import '../css/styles.css'
+import { graphql, useStaticQuery, Link } from 'gatsby'
+import '../css/reset.css'
+import '../css/styles.css'
 import InterestListThanksStyles from "../styles/InterestListThanksStyles"
-export default function InterestListThanks() {
+export default function InterestListThanks({textContent}) {
+
   return (
 
     <InterestListThanksStyles>
         <section>
-        <div>Thanks</div>
-        <Link to="/">Return to Homepage</Link>
+        {textContent}
+        <Link to="/" className="cta">Return to Homepage</Link>
         </section>
     </InterestListThanksStyles>
 
