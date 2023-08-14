@@ -17,7 +17,6 @@ export default styled.div`
 
     .accordian-item-card {
         list-style: none;
-        cursor: pointer;
         padding-left: var(--grid-padding);
         padding-right: var(--grid-padding);
     }
@@ -149,7 +148,7 @@ export default styled.div`
         margin-top: 2rem;
         text-align: center;
         text-transform: uppercase;
-        p {
+        .text-container div {
             color: var(--icon-color);
             font-family: var(--font-family-body);
             font-size: var(--font-size-xs);

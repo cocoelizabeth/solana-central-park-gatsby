@@ -67,10 +67,9 @@ class AccordianItem extends React.Component {
                 <li 
                     className="accordian-item-card border-bottom"
                     id={`pos-${this.index}`}
-                    onClick = {this.handleAccordianItemClick}
                     key={this.title}
                 >
-                    <div ref={this.accordianTitle}  className={`accordian-title ${firstItem}`}>{this.title}</div>
+                    <div onClick = {this.handleAccordianItemClick} ref={this.accordianTitle}  className={`accordian-title ${firstItem}`}>{this.title}</div>
                     <div className={`accordian-content ${firstItem}`} ref={this.accordianContent}>
                         {this.content}
                     </div>

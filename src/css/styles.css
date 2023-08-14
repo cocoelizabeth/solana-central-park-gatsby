@@ -37,11 +37,12 @@ body {
 :root {
   --font-size-xl:  50px;
   --font-size-large: 30px;
-  --font-size-body-copy: 15px;
   --font-size-h3: 20px;
-
+  --font-size-body-copy: 15px;
   --font-size-small: 14px;
   --font-size-xs: 10px;
+
+  --line-height-body-copy:30px;
   
   --logo-height: 34px;
   --nav-margin-top: 1.5rem;
@@ -77,6 +78,10 @@ body {
   font-size: var(--font-size-h3);
 }
 
+p {
+  font-size: var(--font-size-body-copy);
+  line-height: var(--line-height-body-copy);
+}
 
 section {
   padding-right: var(--grid-padding);

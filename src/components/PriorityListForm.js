@@ -165,7 +165,7 @@ export default class PriorityListForm extends React.Component {
     }
 
     addToSpreadsheet(first_name, last_name, email, date, time, phone, current_city, interested_in) {
-        debugger
+
         let interestedList = "";
         let interestedArray = interested_in.split(",");
         let newArray = [];
@@ -183,7 +183,7 @@ export default class PriorityListForm extends React.Component {
         interestedList = newArray.join(", ")
         })
 
-        debugger
+   
         store
         .append("Interest List", [
             {

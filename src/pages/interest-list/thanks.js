@@ -65,3 +65,13 @@ export default function Thanks() {
     />
   )
 }
+
+
+export function Head() {
+  return (
+    <>
+    <title>Thank You for Your Interest | Solana Central Park Apartments</title>
+    <meta name="description" content="Be among the first to experience the new standard in Denver living. Sign up for our interest list today and receive exclusive updates and leasing opportunities." />
+    </>
+  )
+}

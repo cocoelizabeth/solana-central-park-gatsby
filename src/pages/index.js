@@ -167,7 +167,7 @@ const file = homepageData.heroGallery[0].file;
 export function Head() {
   return (
     <>
-    <title>Solana Central Park Apartments | Home</title>
+    <title>Home | Solana Central Park Apartments </title>
     <meta name="description" content="Located in Denver’s charming Central Park neighborhood (formerly Stapleton), and just a 15 minute drive from downtown Denver, Solana Central Park features 307 pet-friendly, rental apartments. Residents can choose from nine different floor plans that range from studios, one-bedroom, and two-bedroom options.
 
 With over 22,000 square feet of curated amenities, Solana Central Park offers a resort-style swimming pool and spa with shaded cabanas, an indoor/outdoor health and fitness center with private workout studios, and a coworking space with individual workspaces and conference rooms. Other useful amenities include a pet spa, resident parcel pending, on-site management, bike storage and repair facilities, gated garage parking, and EV charging stations. Set against the stunning backdrop of the Colorado Rocky mountains, residents will also enjoy access to over 1,000 acres of nearby parks and open space, coupled with 60 miles of biking and walking trails." />
