@@ -3,11 +3,10 @@ import * as React from "react"
 // import '../css/styles.css'
 // import InterestListForm from "../../components/InterestListForm"
 import PriorityListForm from "../../components/PriorityListForm"
-// import ApartmentInterestForm from "../../components/ApartmentInterestForm"
+
 
 export default function PriorityList() {
   return (
-    // <ApartmentInterestForm />
     <PriorityListForm />
 
   )

@@ -21,10 +21,19 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
+    // `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sass`,
     `gatsby-transformer-inline-svg`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults:{
+          formats: [`auto`, `webp`],
+          placeholder: "blurred"
+        }
+      },
+    },
     {
       resolve: `gatsby-source-contentful`,
       options: {

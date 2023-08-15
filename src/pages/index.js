@@ -2,15 +2,13 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import {renderRichText} from 'gatsby-source-contentful/rich-text'
 import { INLINES, BLOCKS, MARKS } from '@contentful/rich-text-types'
-// import { GatsbyImage, getImage, getSrc, getSrcSet} from 'gatsby-plugin-image'
+
 import HomepageStyles from "../styles/HomepageStyles";
 
 import Marquee from "../components/Marquee";
 
 import Accordian from "../components/Accordian";
 
-import Image from "../components/Image";
-import Amenities from "../components/Amenities";
 
 export default function Home() {
   const options = {
@@ -51,7 +49,7 @@ export default function Home() {
                 seoDescription {
                   seoDescription
                 }
-                heroGallery {
+                heroImage {
                   gatsbyImageData
                   file {
                     contentType
@@ -123,8 +121,8 @@ export default function Home() {
 const homepageData = data.allContentfulPageLandingPage.edges[0].node;
 const seoDescription = homepageData.seoDescription.seoDescription;
 // const heroGalleryArray = homepageData.heroGallery;
-const mainHeroImageSrcSet = homepageData.heroGallery[0].gatsbyImageData.images.sources[0].srcSet;
-const mainHeroImageSrc = homepageData.heroGallery[0].gatsbyImageData.images.fallback.src;
+const mainHeroImageSrcSet = homepageData.heroImage.gatsbyImageData.images.sources[0].srcSet;
+const mainHeroImageSrc = homepageData.heroImage.gatsbyImageData.images.fallback.src;
 const introTextBody = homepageData.introTextBody;
 const keyHighlights = homepageData.keyHighlights;
 const pageTitle = homepageData.pageTitle;
@@ -133,10 +131,10 @@ const pageTitle = homepageData.pageTitle;
 const apartmentAmenitiesData = data.allContentfulPageAmenities.edges[0].node.apartmentAmenities;
 const communityAmenitiesData = data.allContentfulPageAmenities.edges[0].node.communityAmenities;
 
-const altText = homepageData.heroGallery[0].description;
+const altText = homepageData.heroImage.description;
 
-const gatsbyImageData = homepageData.heroGallery[0].gatsbyImageData
-const file = homepageData.heroGallery[0].file;
+
+
 
 
 
