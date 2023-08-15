@@ -24,6 +24,8 @@ background-color: var(--central-black);
   padding-inline-start: 0;
   text-decoration: none;
   list-style-type: none;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 @keyframes scroll {
@@ -81,113 +83,4 @@ span.arrow {
 
 
 
-/*   
-    .marquee {
-        height: 3rem;
-    width: 100vw;
-    background-color: black;
-
-    overflow: hidden;
-    position: relative;
-    }
-
-    .marquee div {
-    display: block;
-    width: 200%;
-    height: 100%;
-
-    position: absolute;
-    overflow: hidden;
-
-    animation: marquee 5s linear infinite;
-    }
-
-    .marquee span {
-    float: left;
-    width: 50%;
-    } */
-
-    /* @keyframes marquee {
-    0% { left: 0; }
-    100% { left: -100%; }
-    } */
-    /* .cssmarquee {
- height: 50px;  
- overflow: hidden;
- position: relative;
-}
-.cssmarquee h1 {
- font-size: 2em;
- position: absolute;
- width: 100%;
- height: 100%;
- margin: 0;
- line-height: 50px;
- text-align: center;    
- transform:translateX(100%);
- animation: cssmarquee 10s linear infinite;
-}
-
-h1.second {
-    animation-delay: 2s;
-    color: red;
-    padding-left: 50%;
-}
-
-h1.third {
-    animation-delay: 6s;
-    color: blue;
-    padding-left: 50%;
-}
-  
-@keyframes cssmarquee {
- 0%   { 
- transform: translateX(100%);       
- }
- 100% { 
-  
- transform: translateX(-100%); 
- }
-}
-
-.marquee {
-    position: relative;
-    overflow: hidden;
-    --offset: 20vw;
-    --move-inital: calc(-25% + var(--offset));
-    --move-final: calc(-50% + var(--offset));
-
-    background-color: black;
-    color: white;
-    height: 300px;
-}
-
-.marquee__inner {
-    width: fit-content;
-    display: flex;
-    position: relative;
-    transform: translate3d(var(--move-inital), 0, 0);
-    animation: marquee 5s linear infinite;
-    animation-play-state: running;
-}
-
-.marquee span {
-    font-size: 10vw;
-    padding: 0 2vw;
-}
-
-.marquee:hover .marquee__inner {
-    animation-play-state: paused;
-}
-
-@keyframes marquee {
-    0%   { 
- transform: translate3d(var(--move-initial), 0, 0);       
- }
- 100% { 
-  
- transform:translate3d(var(--move-final), 0, 0); 
- }
-    
-} */
 `;
