@@ -1,11 +1,6 @@
 import styled from 'styled-components';
 export default styled.header`
-.test {
-    height: var(--header-height);
-    width: 100%;
-    background-color: black;
 
-}
     position: fixed;
     top: 0;
     width: 100vw;
@@ -39,6 +34,8 @@ export default styled.header`
         line-height: 14px;
         
     }
+
+
   
   .button button {
     padding: 8px 16px;
@@ -124,4 +121,27 @@ export default styled.header`
       opacity: 1;
     }
   }
+
+  @media only screen and (min-width: 768px) {
+    .button {
+      width: 130px;
+      button {
+        padding: 10px 20px;
+        line-height: 15px;
+      }
+    }
+  } 
+
+  @media only screen and (min-width: 992px) {
+    .button {
+      width: 150px;
+      button {
+        padding: 15px 20px;
+        line-height: 15px;
+      }
+    }
+  } 
+
+
+
 `;

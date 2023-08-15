@@ -9,7 +9,13 @@ const Footer = () => {
     <FooterStyles>
         
         <section className="">
-            <div className="h2">Stay tuned for more updates!</div>
+
+
+          <div className="footer-container">
+          <div className="h2">Stay tuned for more updates!</div>
+            <div className="footer-contact">
+     
+     
             <div className="address">
             <div className="title">SOLANA CENTRAL PARK</div>
                 <Link to="https://goo.gl/maps/9GafJcQn2cn1KYB47">
@@ -19,6 +25,7 @@ const Footer = () => {
 
             </div>
             <a href="mailto:info@solanacentralpark.com">info@SolanaCentralPark.com</a>
+            </div>
             <div className="team">
                 <div className="title">Team</div>
 
@@ -40,7 +47,8 @@ const Footer = () => {
                     </div>
                   </div>
 
-
+                  </div>
+                  </div>
 
                   <div className="copyright">
                     <svg fill="#F7F6F6" fillRule="evenodd" role="img" alt="Equal Housing Logo" aria-labelledby="svgeho" focusable="false" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="1em" height=".884em" viewBox="0 0 15.2 10.72">
@@ -67,7 +75,7 @@ const Footer = () => {
                     <a href="https://reylenn.com/reylenn-properties">Wood Residential</a>
                   | Property Management 
                   </div> */}
-            </div>
+          
         </section>
 
     </FooterStyles>  

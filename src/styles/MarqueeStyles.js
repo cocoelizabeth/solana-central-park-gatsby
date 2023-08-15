@@ -11,8 +11,8 @@ background-color: var(--central-black);
   overflow: hidden;
   user-select: none;
   gap: var(--gap);
-  /* margin-left: var(--grid-gutter);
-  margin-right: var(--grid-gutter); */
+  /* margin-left: var(--grid-padding);
+  margin-right: var(--grid-padding); */
 }
 
 .marquee__content {

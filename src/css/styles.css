@@ -30,8 +30,12 @@ header {
     --icon-color: var(--central-dark-grey);
 }
 
-body {
-  background-color: var(--central-white);
+:root {
+  --grid-width: 100vw;
+  --grid-height: 100vh;
+  --grid-padding: 6vw;
+  --grid-column-count: 6;
+  --grid-gutter:  1.6rem;
 }
 
 :root {
@@ -41,6 +45,7 @@ body {
   --font-size-body-copy: 15px;
   --font-size-small: 14px;
   --font-size-xs: 10px;
+  --font-size-xxs: 8px;
 
   --line-height-body-copy:30px;
   
@@ -51,6 +56,48 @@ body {
 
   --section-padding-small: 3rem;
 }
+
+@media only screen and (min-width: 576px) {
+  :root {
+    --grid-padding: 3rem;
+  }
+}
+
+
+
+@media only screen and (min-width: 768px) {
+  :root {
+    --grid-padding: 3.5rem;
+    --logo-height: 45px;
+    --font-size-xxs: 10px;
+    --font-size-small: 15px;
+  }
+  .amenity-list-item {
+    width: 20%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  :root {
+    --grid-padding: 5.5rem;
+    --font-size-small: 16px;
+    --font-size-xl: 70px;
+  }
+
+}
+
+@media only screen and (min-width: 1200px) {
+  :root {
+    --grid-padding:7rem;
+    --nav-margin-top: 2rem;
+  }
+
+}
+body {
+  background-color: var(--central-white);
+}
+
+
 .h1, .h2, .h3{
   font-family: var(--font-family-heading);
 }
@@ -96,17 +143,11 @@ section {
   border-bottom: 1px solid var(--central-black);
 }
 
-:root {
-  --grid-width: 100vw;
-  --grid-height: 100vh;
-  --grid-padding: 6vw;
-  --grid-column-count: 6;
-  --grid-gutter:  1.6rem;
-}
+
 
 @media only screen and (min-width: 1280px) {
   :root {
-      --grid-padding: 3rem;
+ 
       --grid-column-count: 12;
       --grid-gutter: 2rem;
       --page-intro-small:4.1vw;

@@ -14,6 +14,7 @@ export default styled.footer`
         font-weight: 500;
         text-transform: uppercase;
         padding-top: 2rem;
+  
 }
 
 
@@ -21,6 +22,7 @@ export default styled.footer`
     padding-bottom: 2rem;
     a {
         text-decoration: none;
+        
     }
 
     p {
@@ -74,6 +76,59 @@ export default styled.footer`
     margin-left: 5px;
 }
 
+@media only screen and (min-width: 768px) {
+    /* .h2 {
+        width: 100%;
+        text-align: center;
+    } */
+    .h2 {
+        /* font-size: var(--font-size-h3); */
+        width: 25%;
+    }
+
+    .title {
+        padding-top: 0;
+    }
+    .footer-container {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: top;
+    }
+
+
+    .footer-contact,
+    .team {
+        display: flex;
+        flex-direction: column;
+  
+    }
+
+    .footer-contact {
+        /* width: 40%; */
+        .title {
+        
+            margin-bottom: 12px;
+
+        }
+    }
+
+
+
+   .address a {
+
+    p {
+        line-height: 16px;
+    }
+
+   }
+
+    /* .copyright {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    } */
+}
 
 
 `;

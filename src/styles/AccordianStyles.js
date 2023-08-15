@@ -119,6 +119,7 @@ export default styled.div`
     .accordian-item-subtitle {
         text-transform: uppercase;
         font-family: var(--font-family-body);
+        font-size: var(--font-size-small)
     }
 
    .amenities-list-container {
@@ -151,8 +152,8 @@ export default styled.div`
         .text-container div {
             color: var(--icon-color);
             font-family: var(--font-family-body);
-            font-size: var(--font-size-xs);
-            font-size: 8px;
+        
+            font-size:var(--font-size-xxs);
             margin: 0 auto;
             padding-left: 10px;
             padding-right: 10px;
@@ -184,5 +185,33 @@ export default styled.div`
         stroke-width: 2px;
     }
 
+     @media only screen and (min-width: 768px) {
 
+        .amenity-list-item {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+        .amenity-icon-svg,
+        .amenity-icon-svg-line {
+            height:50px;
+            width: 40px;
+            margin-bottom: 10px;
+        }
+    } 
+
+    @media only screen and (min-width: 768px) {
+
+        .amenity-list-item {
+            width: 20%;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-bottom: 5px;
+        }
+        .amenity-icon-svg,
+        .amenity-icon-svg-line {
+            height:50px;
+            width: 40px;
+            margin-bottom: 10px;
+        }
+    } 
 `;
