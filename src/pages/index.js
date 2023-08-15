@@ -120,14 +120,11 @@ export default function Home() {
 
 const homepageData = data.allContentfulPageLandingPage.edges[0].node;
 const seoDescription = homepageData.seoDescription.seoDescription;
-// const heroGalleryArray = homepageData.heroGallery;
 const mainHeroImageSrcSet = homepageData.heroImage.gatsbyImageData.images.sources[0].srcSet;
 const mainHeroImageSrc = homepageData.heroImage.gatsbyImageData.images.fallback.src;
 const introTextBody = homepageData.introTextBody;
 const keyHighlights = homepageData.keyHighlights;
 const pageTitle = homepageData.pageTitle;
-// const slug = homepageData.slug;
-// const amenitiesData = data.allContentfulIcons.edges
 const apartmentAmenitiesData = data.allContentfulPageAmenities.edges[0].node.apartmentAmenities;
 const communityAmenitiesData = data.allContentfulPageAmenities.edges[0].node.communityAmenities;
 
