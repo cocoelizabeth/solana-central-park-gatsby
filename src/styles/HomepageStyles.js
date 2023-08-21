@@ -29,6 +29,20 @@ section {
     }
 }
 
+@media only screen and (min-width: 768px) {
+    .hero-image-container {
+        height: calc(100vh - (var(--header-height)));
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .hero-image-container {
+        height: calc(100vh - (var(--header-height) * 2));
+    }
+}
+   
+   
+
 .section-title {
     padding-bottom: 2rem;
     padding-top: 4rem;

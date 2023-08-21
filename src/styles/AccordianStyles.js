@@ -185,6 +185,42 @@ export default styled.div`
         stroke-width: 2px;
     }
 
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 0.9em;
+        /* font-family: sans-serif; */
+        /* min-width: 400px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); */
+        p {
+            margin-bottom: 0 !important;
+            padding-bottom: 0;
+        }
+    }
+
+    table th,
+    table td {
+        padding: 12px 12px;
+    }
+
+    table td:nth-child(2),
+    table td:nth-child(3),
+    table th:nth-child(2),
+    table th:nth-child(3) {
+        text-align: center;
+    }
+
+    table tr {
+        border-bottom: thin solid var(--central-medium-grey);
+        vertical-align: middle;
+
+    }
+
+    .accordian-content h2 {
+        margin-bottom: 30px;
+    }
+
      @media only screen and (min-width: 768px) {
 
         .amenity-list-item {

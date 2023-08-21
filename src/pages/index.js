@@ -28,12 +28,12 @@ export default function Home() {
             )
         },
         [BLOCKS.PARAGRAPH]: (node, children) => <p>{children}</p>,
-        [BLOCKS.HEADING_1]: (node, key, next) => <h1>{next(node.content, key, next)}</h1>,
-        [BLOCKS.HEADING_2]: (node, key, next) => <h2>{next(node.content, key, next)}</h2>,
-        [BLOCKS.HEADING_3]: (node, key, next) => <h3>{next(node.content, key, next)}</h3>,
-        [BLOCKS.HEADING_4]: (node, key, next) => <h4>{next(node.content, key, next)}</h4>,
-        [BLOCKS.HEADING_5]: (node, key, next) => <h5>{next(node.content, key, next)}</h5>,
-        [BLOCKS.HEADING_6]: (node, key, next) => <h6>{next(node.content, key, next)}</h6>,
+        [BLOCKS.HEADING_1]: (node, children) => <h1>{children}</h1>,
+        [BLOCKS.HEADING_2]: (node, children) => <h2>{children}</h2>,
+        [BLOCKS.HEADING_3]: (node, children) => <h3>{children}</h3>,
+        [BLOCKS.HEADING_4]: (node, children) => <h4>{children}</h4>,
+        [BLOCKS.HEADING_5]: (node, children) => <h5>{children}</h5>,
+        [BLOCKS.HEADING_6]: (node, children) => <h6>{children}</h6>,
         [BLOCKS.UL_LIST]: (node, children) => (<ul>{children}</ul>),
         [BLOCKS.OL_LIST]: (node, children) => (<ol>{children}</ol>),
         [BLOCKS.LIST_ITEM]: (node, children) => <li className="careers-bullets">{children}</li>,
@@ -48,6 +48,9 @@ export default function Home() {
               node {
                 seoDescription {
                   seoDescription
+                }
+                faqs {
+                  raw
                 }
                 heroImage {
                   gatsbyImageData
@@ -130,7 +133,7 @@ const communityAmenitiesData = data.allContentfulPageAmenities.edges[0].node.com
 
 const altText = homepageData.heroImage.description;
 
-
+const faqs = homepageData.faqs;
 
 
 
@@ -153,6 +156,7 @@ const altText = homepageData.heroImage.description;
         introTextBody = {renderRichText(introTextBody, options)}
         apartmentAmenities={apartmentAmenitiesData} 
         communityAmenities={communityAmenitiesData}
+        faqs={renderRichText(faqs, options)}
       />
      
     </HomepageStyles>

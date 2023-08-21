@@ -13,7 +13,7 @@ import AccordianItem from "./AccordianItem";
 
 
 
-const Accordian = ({keyHighlights, introTextBody, apartmentAmenities, communityAmenities}) => {
+const Accordian = ({keyHighlights, introTextBody, apartmentAmenities, communityAmenities, faqs}) => {
 
       
     const communityAmenitiesList = communityAmenities.map((amenity) => (
@@ -68,6 +68,10 @@ const Accordian = ({keyHighlights, introTextBody, apartmentAmenities, communityA
                     content: apartmentAmenitiesList
                 }
             }
+        },
+        {
+            title: "FAQs",
+            content: faqs 
         }
 
     ]

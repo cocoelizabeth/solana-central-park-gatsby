@@ -111,6 +111,8 @@ export default class PriorityListForm extends React.Component {
             /^((?:\(?[2-9](?:(?=1)1[02-9]|(?:(?=0)0[1-9]|\d{2}))\)?\D{0,3})(?:\(?[2-9](?:(?=1)1[02-9]|\d{2})\)?\D{0,3})\d{4})/
         )
 
+        debugger
+
         switch (input.name) {
             case 'first_name':
                 errors.first_name = 
