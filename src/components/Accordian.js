@@ -86,6 +86,7 @@ const Accordian = ({keyHighlights, introTextBody, apartmentAmenities, communityA
   return (
     <AccordianStyles>
         <ul className="accordian-container">
+ 
             {accordianHtml}
         </ul>
     {/* <div className="ac-container">

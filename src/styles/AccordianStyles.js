@@ -199,6 +199,15 @@ export default styled.div`
         }
     }
 
+    th {
+        p {
+            line-height: normal;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 500;
+        }
+    }
+
     table th,
     table td {
         padding: 12px 12px;
