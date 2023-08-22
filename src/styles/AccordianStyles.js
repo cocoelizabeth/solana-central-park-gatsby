@@ -197,7 +197,7 @@ export default styled.div`
         width: 100%;
         border-collapse: collapse;
         margin: 25px 0;
-        font-size: 0.9em;
+        /* font-size: 0.9em; */
 
         /* font-family: sans-serif; */
         /* min-width: 400px;
