@@ -185,11 +185,20 @@ export default styled.div`
         stroke-width: 2px;
     }
 
+    .asterix-text {
+        font-size: var(--font-size-xxs);
+        margin-top: -2rem;
+        padding-bottom: 2rem;
+        font-family: var(--font-family-body);
+        
+
+    }
     table {
         width: 100%;
         border-collapse: collapse;
         margin: 25px 0;
         font-size: 0.9em;
+        /* font-size: var(--font-size-xs); */
         /* font-family: sans-serif; */
         /* min-width: 400px;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); */
@@ -203,7 +212,7 @@ export default styled.div`
         p {
             line-height: normal;
             text-transform: uppercase;
-            font-size: 12px;
+            /* font-size: 12px; */
             font-weight: 500;
         }
     }
@@ -211,6 +220,10 @@ export default styled.div`
     table th,
     table td {
         padding: 12px 12px;
+        p {
+            font-size: var(--font-size-xxs);
+            text-transform: uppercase;
+        }
     }
 
     table td:nth-child(2),

@@ -54,7 +54,9 @@ class AccordianItem extends React.Component {
                         <div className="accordian-item-subtitle">{this.apartmentAmenitiesSubtitle}</div>
                         <div className="amenities-list-container">
                             {this.apartmentAmenitiesContent}
+                     
                         </div>
+                        <div className="asterix-text">* In all one and two bedroom apartments</div>
                     </div>
   
                 </div>

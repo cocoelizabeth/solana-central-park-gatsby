@@ -76,6 +76,8 @@ const Amenities = ({apartmentAmenities, communityAmenities}) => {
         <div className="amenities-list-container">
           
             {apartmentAmenitiesList}
+
+            <p>*In all one and two bedroom apartments</p>
         </div>
     
         </section>
