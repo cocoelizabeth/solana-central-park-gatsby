@@ -11,7 +11,7 @@ export default function Image({ svg, gatsbyImageData, file, alt, cssClass}) {
       if (svg && svg.content) {
 
         // class for line icons
-        if (alt === 'Woodfire Pizza Oven') {
+        if (alt === 'Woodfire Pizza Oven' || alt === 'Garbage Disposal') {
           imageCssClass = "amenity-icon-svg-line"
         }
         // Inlined SVGs

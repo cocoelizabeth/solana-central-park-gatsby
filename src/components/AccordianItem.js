@@ -56,7 +56,7 @@ class AccordianItem extends React.Component {
                             {this.apartmentAmenitiesContent}
                      
                         </div>
-                        <div className="asterix-text">* In all one and two bedroom apartments</div>
+                        <div className="asterix-text">*In all one and two bedroom apartments</div>
                     </div>
   
                 </div>

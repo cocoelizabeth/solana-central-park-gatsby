@@ -188,9 +188,9 @@ export default styled.div`
     .asterix-text {
         font-size: var(--font-size-xxs);
         margin-top: -2rem;
-        padding-bottom: 2rem;
+        padding-bottom: 4rem;
         font-family: var(--font-family-body);
-        
+
 
     }
     table {
@@ -198,7 +198,7 @@ export default styled.div`
         border-collapse: collapse;
         margin: 25px 0;
         font-size: 0.9em;
-        /* font-size: var(--font-size-xs); */
+
         /* font-family: sans-serif; */
         /* min-width: 400px;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); */
@@ -219,25 +219,33 @@ export default styled.div`
 
     table th,
     table td {
-        padding: 12px 12px;
+        padding-top: 15px;
+        padding-bottom: 15px;
         p {
-            font-size: var(--font-size-xxs);
-            text-transform: uppercase;
+            /* font-size: var(--font-size-small); */
+            line-height: normal;
         }
     }
+
+
 
     table td:nth-child(2),
     table td:nth-child(3),
     table th:nth-child(2),
     table th:nth-child(3) {
         text-align: center;
+        min-width: 100px;
     }
+
+
 
     table tr {
         border-bottom: thin solid var(--central-medium-grey);
-        vertical-align: middle;
+        
 
     }
+
+
 
     .accordian-content h2 {
         margin-bottom: 30px;
