@@ -230,9 +230,11 @@ export default styled.div`
 
 
     table td:nth-child(2),
-    table td:nth-child(3),
     table th:nth-child(2),
-    table th:nth-child(3) {
+    table td:nth-child(3),
+    table th:nth-child(3),
+    table td:nth-child(4),
+    table th:nth-child(4) {
         text-align: center;
         min-width: 100px;
     }

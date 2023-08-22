@@ -2,7 +2,7 @@ import React from "react";
 class AccordianItem extends React.Component {
     constructor(props) {
         super(props)
- 
+        
         this.title = this.props.data.title;
         this.content = this.props.data.content;
         this.index = this.props.index;
@@ -72,7 +72,7 @@ class AccordianItem extends React.Component {
                     key={this.title}
                 >
                     <div onClick = {this.handleAccordianItemClick} ref={this.accordianTitle}  className={`accordian-title ${firstItem}`}>{this.title}</div>
-                    <div className={`accordian-content ${firstItem}`} ref={this.accordianContent}>
+                    <div className={`accordian-content ${firstItem} ${this.title}`} ref={this.accordianContent}>
                         {this.content}
                     </div>
                        

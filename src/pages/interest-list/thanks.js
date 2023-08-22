@@ -45,6 +45,38 @@ export default function Thanks() {
                 textContent {
                   raw
                 }
+                thankYouGraphic {
+                  title
+                  gatsbyImageData
+                  url
+                  svg {
+                    absolutePath
+                    content
+                    dataURI
+                    originalContent
+                    relativePath
+                  }
+                  file {
+                    url
+                    contentType
+                  }
+                }
+                signatureGraphic {
+                  title
+                  gatsbyImageData
+                  url
+                  svg {
+                    absolutePath
+                    content
+                    dataURI
+                    originalContent
+                    relativePath
+                  }
+                  file {
+                    url
+                    contentType
+                  }
+                }
               }
             }
           }
@@ -52,16 +84,20 @@ export default function Thanks() {
     `
   );
 
-  debugger
+
 
   const thankYouPageData = data.allContentfulPageInterestListThankYou.edges[0].node;
   const textContent = thankYouPageData.textContent;
+  const thankYouGraphic = thankYouPageData.thankYouGraphic;
+  const signatureGraphic = thankYouPageData.signatureGraphic
 
 
   return (
     
     <InterestListThanks
       textContent={renderRichText(textContent, options)}
+      thankYouGraphic = {thankYouGraphic}
+      signatureGraphic= {signatureGraphic}
     />
   )
 }
