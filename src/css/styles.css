@@ -7,26 +7,31 @@ header {
   z-index: 100;
 }
 
+h1 {
+  font-weight: normal;
+}
+
 :root {
     --font-family-body: "Fira Mono";
     --font-family-heading: "Marcellus";
 
+
     --central-white: #F7F6F6;
     --central-light: #ECE9E9;
+    --central-grey: #BBB7B2ff;
+    --central-dark-grey: #77766F;
+    --central-olive: #848672ff;
+    --central-rust: #9C6E4Dff;
+    --central-black: #292826;
+
+
     --central-warm-grey: #CBC3BAff;
     --central-light-grey: #E1DEDCff;
     --central-medium-grey:#C0BDB9;
-    --central-grey: #BBB7B2ff;
-
-    --central-dark-grey: #77766F;
     --central-pewter:#514E49;
     --central-charcoal: #444142;
-    --central-black: #292826ff;
     --central-brick: #8C624E;
-    --central-light-brown: #9C6E4Dff;
-    --central-olive: #848672ff;
     --central-forest: #4F564B;
-
     --icon-color: var(--central-dark-grey);
 }
 

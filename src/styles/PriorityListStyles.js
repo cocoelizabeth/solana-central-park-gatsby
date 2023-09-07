@@ -9,10 +9,10 @@ export default styled.div`
     padding-bottom: 4rem;
     
     background-color: var(--central-light);
-    --input-label-text-color: var(--central-pewter);
-    --heading-text-color: var(--central-pewter);
+    --input-label-text-color: var(--central-dark-grey);
+    --heading-text-color: var(--central-dark-grey);
     --placeholder-text-color: var(--central-grey);
-    --error-color: var(--central-light-brown);
+    --error-color: var(--central-rust);
     --input-focus-color: var(--central-olive);
     --border-color: var(--central-grey);
     --checkbox-background-color: var(--central-white);
