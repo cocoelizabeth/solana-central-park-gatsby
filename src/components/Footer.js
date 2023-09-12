@@ -24,7 +24,7 @@ const Footer = () => {
                 </Link> 
 
             </div>
-            <a href="mailto:live@solanacentralpark.com">live@SolanaCentralPark.com</a>
+            <a href="mailto:info@solanacentralpark.com">info@solanaCentralPark.com</a>
             </div>
             <div className="team">
                 <div className="title">Team</div>
