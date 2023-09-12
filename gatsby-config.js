@@ -20,6 +20,14 @@ module.exports = {
     siteUrl: `https://solanacentralpark.netlify.app`
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: "GTM-PX7JH74F",
+        includeInDevelopment: false,
+        enableWebVitalsTracking: true,
+      },
+    },
     `gatsby-plugin-image`,
     // `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
@@ -40,7 +48,9 @@ module.exports = {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
-    }, // Needed for dynamic images
+    },
+
+     // Needed for dynamic images
     // {
     //   resolve: `gatsby-omni-font-loader`,
     //   options: {
