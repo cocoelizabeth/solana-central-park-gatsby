@@ -235,8 +235,8 @@ export default class PriorityListForm extends React.Component {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                senderName: '"SOLANA CENTRAL PARK" <info@solanacentralpark.com>',
-                senderEmail: "info@solanacentralpark.com",
+                senderName: '"SOLANA CENTRAL PARK" <live@solanacentralpark.com>',
+                senderEmail: "live@solanacentralpark.com",
                 message: "NEW MESSAGE",
                 first_name: first_name,
                 last_name: last_name,
