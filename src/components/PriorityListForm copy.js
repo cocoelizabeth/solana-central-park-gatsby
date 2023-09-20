@@ -85,7 +85,7 @@ export default class PriorityListForm extends React.Component {
           });
         this.handleErrors(input)
         this.toggleSubmitButton();
-      
+
 
     }
 
@@ -100,7 +100,6 @@ export default class PriorityListForm extends React.Component {
             })
             this.handleErrors(input);
             this.toggleSubmitButton();
-         
     }
 
     handleErrors(input) {
@@ -112,7 +111,7 @@ export default class PriorityListForm extends React.Component {
             /^((?:\(?[2-9](?:(?=1)1[02-9]|(?:(?=0)0[1-9]|\d{2}))\)?\D{0,3})(?:\(?[2-9](?:(?=1)1[02-9]|\d{2})\)?\D{0,3})\d{4})/
         )
 
-
+        debugger
 
         switch (input.name) {
             case 'first_name':
@@ -160,16 +159,33 @@ export default class PriorityListForm extends React.Component {
     }
     
     validateForm(errors) {
-   
+        
         let valid = true;
         Object.values(errors).forEach(val => val.length > 0 && (valid = false));
         
         return valid;
-
     }
 
-    addToSpreadsheet(first_name, last_name, email, date, time, phone, current_city, interestedList) {
+    addToSpreadsheet(first_name, last_name, email, date, time, phone, current_city, interested_in) {
 
+        let interestedList = "";
+        let interestedArray = interested_in.split(",");
+        let newArray = [];
+        interestedArray.forEach((floorplan) => {
+            switch(floorplan) {
+                case 'studio':
+                    newArray.push("Studio");
+                case 'oneBedroom':
+                    newArray.push("One Bedroom");
+                case 'twoBedroom':
+                    newArray.push("Two Bedroom");
+                default:
+                    break;
+            }
+        interestedList = newArray.join(", ")
+        })
+
+   
         store
         .append("Interest List", [
             {
@@ -205,38 +221,12 @@ export default class PriorityListForm extends React.Component {
             const interested_in = Object.keys(this.state.interestedIn)
             .filter((key) => this.state.interestedIn[key])
             .join(", ");
-
-            let interestedList = "";
-            let interestedArray = interested_in.split(",");
-            let newArray = [];
-            interestedArray.forEach((floorplan) => {
-            switch(floorplan) {
-                case 'studio':
-                    newArray.push("Studio");
-                case 'oneBedroom':
-                    newArray.push("One Bedroom");
-                case 'twoBedroom':
-                    newArray.push("Two Bedroom");
-                default:
-                    break;
-            }
-            interestedList = newArray.join(", ")
-            })
-            
-
-            // const interested_in_text =  Object.keys(this.state.interestedIn)
-            // .filter((key) => this.state.interestedIn[key])
-            // .map((key) => key == 'studio' ? 'Studio' : 'oneBedroom' ? 'One Bedroom' : 'twoBedroom' ? 'Two Bedroom' : "")
-            // .join(", ");
-
-           
-
             this.showLoadingSpinner();
 
-            this.addToSpreadsheet(first_name, last_name, email, date, time, phone, current_city, interestedList)
+            this.addToSpreadsheet(first_name, last_name, email, date, time, phone, current_city, interested_in)
 
         fetch (
-            "https://wo46d95cl6.execute-api.us-east-1.amazonaws.com/sendEmail", 
+            "https://v7u9b4rtpc.execute-api.us-east-2.amazonaws.com/sendEmail", 
         {
             mode: "no-cors",
             method: "POST",
@@ -256,7 +246,7 @@ export default class PriorityListForm extends React.Component {
                 subject: subject,
                 phone: phone,
                 current_city: current_city,
-                interested_in: interestedList,
+                interested_in: interested_in,
             })
         })
         .then(response => console.log(response))
