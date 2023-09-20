@@ -42,7 +42,7 @@ const Footer = () => {
                     </div>
 
                     <div className="team-item">
-                      <a href="https://www.woodpartners.com/property-management/">Wood Residential</a>
+                      <a href="https://www.woodpartners.com/property-management/">Wood Partners</a>
                       Property Management 
                     </div>
                   </div>
