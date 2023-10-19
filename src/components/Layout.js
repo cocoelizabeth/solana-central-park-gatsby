@@ -6,6 +6,8 @@ import '../css/reset.css'
 import '../css/styles.css';
 import GlobalStyles from '../styles/GlobalStyles';
 
+
+
 function Layout({ children }) {
   return (
     <>
@@ -20,4 +22,5 @@ function Layout({ children }) {
 }
 
 export default Layout;
+
 

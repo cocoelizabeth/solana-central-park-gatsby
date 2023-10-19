@@ -23,7 +23,10 @@ module.exports = {
     {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
-        id: "GTM-PX7JH74F",
+        // old GTM tag (set up by coco):
+        // id: "GTM-PX7JH74F",
+        // new GTM tag, set up by Wood
+        id: "GTM-WWL3VWKP",
         includeInDevelopment: false,
         enableWebVitalsTracking: true,
       },
